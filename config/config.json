@@ -1,8 +1,10 @@
 {
     "development": {
-      "username": "root",
-      "password": "Axelgracieshiba1992",
-      "database": "condo_db",
+
+      "username": "process.env.MYSQL_USER",
+      "password": "yamaha1600",
+      "database": "condoApp_db",
+
       "host": "localhost",
       "dialect": "mysql"
     },
@@ -18,4 +20,3 @@
       "use_env_variable": "JAWSDB_URL",
       "dialect": "mysql"
     }
-  }
