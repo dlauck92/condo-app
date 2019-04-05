@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "node-sass": "^4.11.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-scripts": "2.1.8",
-    "sequelize": "^5.1.1"
+    "sequelize": "^5.2.12"
   },
   "scripts": {
     "start": "react-scripts start",
