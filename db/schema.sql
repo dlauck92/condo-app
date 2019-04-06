@@ -1,3 +1,3 @@
-create database condo_db;
+create database condoApp_db;
 
-use condo_db;
+use condoApp_db;
