@@ -16,9 +16,10 @@ module.exports = function (sequelize, DataTypes) {
             }
             
         },
-        complete: DataTypes.BOOLEAN,
+        unit_num: DataTypes.BIGINT,
+        complete: DataTypes.BOOLEAN
 
-        unit_num: DataTypes.INT
+        
         
         
 
