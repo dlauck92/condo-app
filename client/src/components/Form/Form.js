@@ -2,13 +2,13 @@ import React from 'react';
 import './Form.css';
 import api from '../../utils/api';
 
-
 class form extends React.Component {
     state = {
         ticketTitle: '',
         unitNum: '',
         ticketBody: ''
     }
+
     componentDidMount() {
         this.submitOrder();
     }
