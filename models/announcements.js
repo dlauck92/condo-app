@@ -4,15 +4,13 @@ module.exports = function (sequelize, DataTypes) {
         announcement_title: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [1]
+            
             }
         },
         announcement_body: {
             type: DataTypes.TEXT,
             allowNull: false,
-            validate: {
-                len: [1]
+            
             }
         }
 
