@@ -14,11 +14,13 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1]
             }
-            
         },
-        complete: DataTypes.BOOLEAN,
+    
+        
+        unit_num: DataTypes.BIGINT,
+        complete: DataTypes.BOOLEAN
 
-        unit_num: DataTypes.INT
+        
         
         
 
