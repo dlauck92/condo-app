@@ -13,7 +13,7 @@ export default {
 //   deleteBook: function(id) {
 //     return axios.delete("/api/books/" + id);
 //   },
-  // Saves a book to the database
+  // Saves a work order ticket to the database
   saveWorkOrder: function(newWorkorder) {
     return axios.post("/api/CreateWorkOrder", newWorkorder);
   }

@@ -11,8 +11,9 @@ module.exports = function (app, ) {
           complete: false
           
         }).then(newWorkOrder => {
+            console.log("apiRoutes" + newWorkOrder);
           res.json(newWorkOrder);
-    
+            
         });
       });
         //update open workorder

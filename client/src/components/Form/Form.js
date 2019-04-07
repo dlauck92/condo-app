@@ -9,14 +9,20 @@ class form extends React.Component {
         unitNum: '',
         ticketBody: ''
     }
+    componentDidMount() {
+        this.submitOrder();
+    }
+    
     submitOrder = () => {
-        console.log("dmm1");
-        api.saveWorkorder(
+        
+        api.saveWorkOrder(
+            console.log("Form"),
             {
                 ticket_title: this.state.ticketTitle,  
-                ticket_body: this.state.ticketBody,
-                unit_num: this.state.unitNum
+                unit_num: this.state.unitNum,
+                ticket_body: this.state.ticketBody
             }
+            
         )
     }
     render() {
