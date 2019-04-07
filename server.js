@@ -2,7 +2,7 @@ require("dotenv").config();
 var express = require("express");
 
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3001;
 var session  = require('express-session');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -10,6 +10,11 @@ var morgan = require('morgan');
 var db = require("./models");
 var passport = require('passport');
 var flash    = require('connect-flash');
+
+// Routes
+require("./routes/apiRoutes.js")(app);
+
+
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));

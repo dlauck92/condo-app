@@ -3,8 +3,8 @@ module.exports = {
     'connection': {
         'host': 'localhost',
         'user': 'root',
-        'password': 'Axelgracieshiba1992'
+        'password': 'yamaha1600'
     },
-	'database': 'condo_db',
-    'users_table': 'users'
+	'database': 'condoApp_db',
+
 };

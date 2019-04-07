@@ -3,36 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.4",
-    "express": "^4.16.4",
-    "express-session": "^1.15.6",
-    "morgan": "^1.9.1",
-    "passport": "^0.4.0",
-    "path": "^0.12.7",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8",
-    "sequelize": "^5.1.1",
-    "session": "^0.1.0"
-=======
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "if-env": "^1.0.4",
+    "morgan": "^1.9.1",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.5",
     "node-sass": "^4.11.0",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-scripts": "2.1.8",
-    "sequelize": "^5.2.12"
+    "passport": "^0.4.0",
+    "path": "^0.12.7",
+    "sequelize": "^5.2.12",
+    "session": "^0.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"node server.js\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
