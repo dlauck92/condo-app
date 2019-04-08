@@ -5,13 +5,13 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             
-            }
+            
         },
         announcement_body: {
             type: DataTypes.TEXT,
             allowNull: false,
             
-            }
+            
         }
 
     });

@@ -2,16 +2,16 @@ module.exports = function (sequelize, DataTypes) {
     var WorkOrder = sequelize.define("WorkOrder", {
 
         ticket_title: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         
-            }
+            
         },
         ticket_body: {
             type: DataTypes.TEXT,
             allowNull: false,
             
-            }
+            
         },
     
         
