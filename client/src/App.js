@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Toolbar from './components/Toolbar';
-import SideDrawer from './components/SideDrawer';
-import Backdrop from './components/Backdrop';
-import Form from './components/Form';
-import Home from './components/Home';
-import Footer from './components/Footer';
-import SignUp from './components/SignUp';
-import LogIn from './components/LogIn';
+import Toolbar from './components/Toolbar/Toolbar';
+import SideDrawer from './components/SideDrawer/SideDrawer';
+import Backdrop from './components/Backdrop/Backdrop';
+import Form from './components/Form/Form';
+import Home from './components/Home/Home';
+import Footer from './components/Footer/Footer';
+// import SignUp from './components/SignUp/SignUp';
+// import LogIn from './components/LogIn/LogIn';
 import axios from 'axios'
 
 class App extends Component {
