@@ -4,15 +4,13 @@ module.exports = function (sequelize, DataTypes) {
         ticket_title: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [1]
+        
             }
         },
         ticket_body: {
             type: DataTypes.TEXT,
             allowNull: false,
-            validate: {
-                len: [1]
+            
             }
         },
     
