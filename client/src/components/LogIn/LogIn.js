@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import './style.css';
+import './LogIn.css';
 
-class LogIn extends Component {
+class logIn extends Component {
     constructor() {
         super()
         this.state = {
@@ -67,6 +67,7 @@ class LogIn extends Component {
                             required
                             autoFocus
                         />
+                        <br />
                         <label className="sr-only" htmlFor="password">Password</label>
                         <input
                             className="form-control"
@@ -77,7 +78,7 @@ class LogIn extends Component {
                             onChange={this.handleChange}
                             required
                         />
-
+                        <br />
                         <button
                             className="btn btn-lg btn-primary btn-block mt-3"
                             onClick={this.handleSubmit}
@@ -92,4 +93,4 @@ class LogIn extends Component {
     }
 }
 
-export default LogIn;
+export default logIn;

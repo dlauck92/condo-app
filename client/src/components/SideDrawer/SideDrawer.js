@@ -13,7 +13,10 @@ const sideDrawer = props => {
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/">Announcments</a>
+                    <a href="/LogIn">Sign In</a>
+                </li>
+                <li>
+                    <a href="/SignUp">Register</a>
                 </li>
                 <li>
                     <a href="/Dashboard">Dashboard</a>

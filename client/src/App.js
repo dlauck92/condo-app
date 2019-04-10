@@ -8,8 +8,9 @@ import Home from './components/Home/Home';
 import Dashboard from './components/Dashboard/Dashboard';
 import Form from './components/Form/Form';
 import Footer from './components/Footer/Footer';
-// import SignUp from './components/SignUp/SignUp';
-// import LogIn from './components/LogIn/LogIn';
+import SignUp from './components/SignUp/SignUp';
+import LogIn from './components/LogIn/LogIn';
+import SecretRoute from './components/SecretRoute/SecretRoute';
 import axios from 'axios'
 
 class App extends Component {
@@ -53,7 +54,7 @@ class App extends Component {
       }
     });
   }
- 
+
   state = {
     sideDrawerOpen: false
   };
@@ -81,15 +82,33 @@ class App extends Component {
           {backdrop}
           <main style={{ marginTop: '64px' }}>
             <Switch>
-              <Route exact path='/' component={Home} />
+              <Route exact path='/LogIn' component={LogIn} />
+              <Route exact path='/SignUp' component={SignUp} />
+              {/* <Route exact path='/' component={Home} />
               <Route exact path='/Dashboard' component={Dashboard} />
-              <Route exact path='/Form' component={Form} />
+              <Route exact path='/Form' component={Form} /> */}
+              <SecretRoute
+              isAuthenticated={this.state.loggedIn}
+              exact path="/Home"
+              component={Home}
+            />
+             <SecretRoute
+              isAuthenticated={this.state.loggedIn}
+              exact path="/Dashboaad"
+              component={Dashboard}
+            />
+             <SecretRoute
+              isAuthenticated={this.state.loggedIn}
+              exact path="/Form"
+              component={Form}
+            />
             </Switch>
           </main>
           <Footer />
         </div>
       </Router>
     );
+
   }
 }
 
