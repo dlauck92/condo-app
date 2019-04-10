@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
-import Form from './components/Form/Form';
 import Home from './components/Home/Home';
+import Dashboard from './components/Dashboard/Dashboard';
+import Form from './components/Form/Form';
 import Footer from './components/Footer/Footer';
 // import SignUp from './components/SignUp/SignUp';
 // import LogIn from './components/LogIn/LogIn';
@@ -81,6 +82,7 @@ class App extends Component {
           <main style={{ marginTop: '64px' }}>
             <Switch>
               <Route exact path='/' component={Home} />
+              <Route exact path='/Dashboard' component={Dashboard} />
               <Route exact path='/Form' component={Form} />
             </Switch>
           </main>
