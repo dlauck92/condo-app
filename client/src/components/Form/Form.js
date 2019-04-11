@@ -9,16 +9,15 @@ class form extends React.Component {
         ticketBody: ''
     }
 
-    componentDidMount() {
-        this.submitOrder();
-    }
+    // componentDidMount() {
+    //     this.submitOrder();
+    // }
     
     submitOrder = () => {
         
         api.saveWorkOrder(
-            console.log("Form"),
             {
-                ticket_title: this.state.ticketTitle,  
+                ticket_title: this.state.ticketTitle,
                 unit_num: this.state.unitNum,
                 ticket_body: this.state.ticketBody
             }
@@ -34,7 +33,7 @@ class form extends React.Component {
                 <br />
                 <input className='ticketBody' placeholder='Ticket Body' value={this.state.ticketBody} onChange={e => this.setState({ ticketBody: e.target.value })} />
                 <br />
-                <input type="submit" value="Submit" onClick={()=> this.submitOrder()}/>
+                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.submitOrder()}}/>
             </form>
         );
     }

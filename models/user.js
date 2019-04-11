@@ -8,21 +8,24 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
+
         email: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: { isEmail: true },
             unique: true
         },
+
         password: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        lastLogin: DataTypes.DATE,
+
         status: {
             type: DataTypes.ENUM("active", "inactive"),
             defaultValue: "active"
         },
+        
         user_profile_pic: {
             type: DataTypes.STRING,
             allowNull: true,
@@ -30,6 +33,18 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
+
+    // connection.query('\
+    //     CREATE TABLE `' + dbconfig.database + '`.`' + dbconfig.users_table + '` ( \
+    //         `id` INT UNSIGNED NOT NULL AUTO_INCREMENT, \
+    //         `username` VARCHAR(20) NOT NULL, \
+    //         `password` CHAR(60) NOT NULL, \
+    //             PRIMARY KEY (`id`), \
+    //         UNIQUE INDEX `id_UNIQUE` (`id` ASC), \
+    //         UNIQUE INDEX `username_UNIQUE` (`username` ASC) \
+    //     )');
+
+        lastLogin: DataTypes.DATE,
 
         first_name: DataTypes.STRING,
         
@@ -41,14 +56,10 @@ module.exports = function (sequelize, DataTypes) {
 
         owner: DataTypes.BOOLEAN,
             
-        
         boardManager: DataTypes.BOOLEAN,
             
-    
         tentant: DataTypes.BOOLEAN,
             
-        
-        
     });
     User.associate = function (models) {
         User.hasMany(models.Post,models.WorkOder,models.Announcement, {

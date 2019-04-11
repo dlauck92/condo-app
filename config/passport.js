@@ -1,17 +1,20 @@
 // config/passport.js
-
+require("dotenv").config();
 // load all the things we need
 var LocalStrategy   = require('passport-local').Strategy;
 
 // load up the user model
 var mysql = require('mysql');
 var bcrypt = require('bcrypt-nodejs');
-var dbconfig = require('./database');
-var connection = mysql.createConnection(dbconfig.connection);
+// var dbconfig = require('./database');
+// var connection = mysql.createConnection(dbconfig.connection);
 
-connection.query('USE ' + dbconfig.database);
+// connection.query('USE ' + process.env.MYSQL_DBNAME);
 // expose this function to our app using module.exports
-module.exports = function(passport) {
+module.exports = function(passport, user) {
+
+    var User = user;
+    var LocalStrategy = require('passport-local').Strategy;
 
     // =========================================================================
     // passport session setup ==================================================
@@ -40,30 +43,30 @@ module.exports = function(passport) {
     passport.use(
         'local-signup',
         new LocalStrategy({
-            // by default, local strategy uses username and password, we will override with email
-            usernameField : 'username',
+            // by default, local strategy uses userName and password, we will override with email
+            usernameField : 'userName',
             passwordField : 'password',
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
-        function(req, username, password, done) {
+        function(req, userName, password, done) {
             // find a user whose email is the same as the forms email
             // we are checking to see if the user trying to login already exists
-            connection.query("SELECT * FROM users WHERE username = ?",[username], function(err, rows) {
+            connection.query("SELECT * FROM users WHERE userName = ?",[userName], function(err, rows) {
                 if (err)
                     return done(err);
                 if (rows.length) {
                     return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
                 } else {
-                    // if there is no user with that username
+                    // if there is no user with that userName
                     // create the user
                     var newUserMysql = {
-                        username: username,
+                        userName: userName,
                         password: bcrypt.hashSync(password, null, null)  // use the generateHash function in our user model
                     };
 
-                    var insertQuery = "INSERT INTO users ( username, password ) values (?,?)";
+                    var insertQuery = "INSERT INTO users ( userName, password ) values (?,?)";
 
-                    connection.query(insertQuery,[newUserMysql.username, newUserMysql.password],function(err, rows) {
+                    connection.query(insertQuery,[newUserMysql.userName, newUserMysql.password],function(err, rows) {
                         newUserMysql.id = rows.insertId;
 
                         return done(null, newUserMysql);
@@ -82,13 +85,13 @@ module.exports = function(passport) {
     passport.use(
         'local-login',
         new LocalStrategy({
-            // by default, local strategy uses username and password, we will override with email
-            usernameField : 'username',
+            // by default, local strategy uses userName and password, we will override with email
+            usernameField : 'userName',
             passwordField : 'password',
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
-        function(req, username, password, done) { // callback with email and password from our form
-            connection.query("SELECT * FROM users WHERE username = ?",[username], function(err, rows){
+        function(req, userName, password, done) { // callback with email and password from our form
+            connection.query("SELECT * FROM users WHERE userName = ?",[userName], function(err, rows){
                 if (err)
                     return done(err);
                 if (!rows.length) {

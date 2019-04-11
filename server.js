@@ -14,8 +14,6 @@ var flash    = require('connect-flash');
 // Routes
 require("./routes/apiRoutes.js")(app);
 
-
-
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -23,7 +21,6 @@ app.use(express.static("public"));
 
 // configuration ===============================================================
 // connect to our database
-
 require('./config/passport')(passport); // pass passport for configuration
 
 // set up our express application
@@ -38,14 +35,15 @@ app.set('view engine', 'ejs'); // set up ejs for templating
 
 // required for passport
 app.use(session({
-	secret: 'vidyapathaisalwaysrunning',
-	resave: true,
-	saveUninitialized: true
- } )); // session secret
+	secret: 'condoapp',
+	resave: false,
+	saveUninitialized: false
+ } ));
+ 
+// session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
-
 
 var syncOptions = { force: false };
 

@@ -1,6 +1,5 @@
 var db = require("../models");
-module.exports = function (app, ) {
-
+module.exports = app => {
 
         //create a workorder
     app.post("/api/CreateWorkOrder", function (req, res) {
@@ -12,6 +11,7 @@ module.exports = function (app, ) {
           
         }).then(newWorkOrder => {
             console.log("apiRoutes" + newWorkOrder);
+            console.log(req.body);
           res.json(newWorkOrder);
             
         });
@@ -36,7 +36,6 @@ module.exports = function (app, ) {
         //find all pending workers
       app.get("/api/ClosedWorkOrder/:unit_num", function (req, res) {
         db.WorkOrder.findAll({
-
             ticket_title: req.body.ticket_title,
             ticket_body: req.body.ticket_body,
             unit_num: req.body.unit_num,
