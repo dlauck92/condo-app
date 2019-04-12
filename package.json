@@ -5,6 +5,7 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
+    "bootstrap": "^4.3.1",
     "concurrently": "^4.1.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.4",
@@ -19,6 +20,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
+    "react-particles-js": "^2.5.1",
     "sequelize": "^5.2.12",
     "session": "^0.1.0"
   },
