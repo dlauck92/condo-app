@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
@@ -11,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
 import SecretRoute from './components/SecretRoute/SecretRoute';
+import Cards from './components/Cards/Cards';
 import axios from 'axios'
 
 class App extends Component {
@@ -104,6 +104,7 @@ class App extends Component {
             />
             </Switch>
           </main>
+          <Cards />
           <Footer />
         </div>
       </Router>
