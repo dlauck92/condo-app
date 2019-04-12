@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
@@ -10,9 +11,7 @@ import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
 import SecretRoute from './components/SecretRoute/SecretRoute';
-import axios from 'axios';
-import Cards from './components/Cards/Cards';
-
+import axios from 'axios'
 
 class App extends Component {
   constructor() {
@@ -76,7 +75,6 @@ class App extends Component {
       backdrop = <Backdrop click={this.backdropClickHandler} />
     }
     return (
-
       <Router>
         <div style={{ height: '100%' }}>
           <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
@@ -104,16 +102,12 @@ class App extends Component {
               exact path="/Form"
               component={Form}
             />
-              <Route exact path='/' component={Home} />
-              <Route exact path='/Form' component={Form} />
             </Switch>
           </main>
-          <Cards />
           <Footer />
         </div>
       </Router>
     );
-    
 
   }
 }
