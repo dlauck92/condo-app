@@ -1,10 +1,9 @@
 {
   "development": {
 
-    "username": "process.env.MYSQL_USER",
+    "username": "root",
     "password": "yamaha1600",
     "database": "condoApp_db",
-
     "host": "localhost",
     "dialect": "mysql"
   },

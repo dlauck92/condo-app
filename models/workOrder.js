@@ -24,13 +24,13 @@ module.exports = function (sequelize, DataTypes) {
 
     });
 
-    WorkOrder.associate = function (models) {
-        WorkOrder.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
+    // WorkOrder.associate = function (models) {
+    //     WorkOrder.belongsTo(models.User, {
+    //         foreignKey: {
+    //             allowNull: true
+    //         }
+    //     });
+    // };
 
     return WorkOrder;
  

@@ -50,11 +50,11 @@ module.exports = function (sequelize, DataTypes) {
         
         
     });
-    User.associate = function (models) {
-        User.hasMany(models.Post,models.WorkOder,models.Announcement, {
-            onDelete: "cascade"
-        });
-    };
+    // User.associate = function (models) {
+    //     User.hasMany(models.Post,models.Announcement, {  //deleted models.WorkOrder  on 4/10
+    //         onDelete: "cascade"
+    //     });
+    // };
 
     return User;
 };

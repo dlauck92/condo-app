@@ -7,9 +7,11 @@ import Backdrop from './components/Backdrop/Backdrop';
 import Form from './components/Form/Form';
 import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
+
 // import SignUp from './components/SignUp/SignUp';
 // import LogIn from './components/LogIn/LogIn';
 import axios from 'axios'
+
 
 class App extends Component {
   constructor() {
