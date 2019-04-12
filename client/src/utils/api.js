@@ -19,6 +19,6 @@
     
 //   }
 // };
-getNanabyID: function(unit_num) {
-  return axios.get("OpenWorkOrder/" + unit_num);
-},
+// getNanabyID: function(unit_num) {
+//   return axios.get("OpenWorkOrder/" + unit_num);
+// },
