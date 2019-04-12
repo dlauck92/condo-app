@@ -23,7 +23,7 @@ app.use(express.static("public"));
 // configuration ===============================================================
 // connect to our database
 
-// require('./config/passport')(passport); // pass passport for configuration
+require('./config/passport')(passport); // pass passport for configuration
 
 // set up our express application
 app.use(morgan('dev')); // log every request to the console

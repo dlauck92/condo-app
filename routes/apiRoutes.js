@@ -1,7 +1,7 @@
 var db = require("../models");
 module.exports = function (app, ) {
 
-  
+
   //create a new work order 
   app.post("/CreateWorkOrder", function (req, res) {
     db.WorkOrder.create({
@@ -75,6 +75,13 @@ module.exports = function (app, ) {
       }).catch(err => res.send(err)
       );
   });
-
+  app.get("/api/FindOneWorkOrder/:ticket_title", function (req, res) {
+    db.WorkOrder.findOne({ 
+      where: { ticket_title: req.params.ticket_title 
+      } 
+    }).then(WorkOrder => {
+      res.json(WorkOrder);
+    });
+  });
 
 };
