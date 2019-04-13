@@ -16,13 +16,13 @@ module.exports = function (sequelize, DataTypes) {
 
     });
 
-    Announcement.associate = function (models) {
-        Announcement.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
+    // Announcement.associate = function (models) {
+    //     Announcement.belongsTo(models.User, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
 
     return Announcement;
  

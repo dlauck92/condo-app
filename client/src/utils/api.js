@@ -1,6 +1,6 @@
-import axios from "axios";
+// import axios from "axios";
 
-export default {
+// export default {
   // Gets all books
 //   getBooks: function() {
 //     return axios.get("/api/books");
@@ -14,7 +14,11 @@ export default {
 //     return axios.delete("/api/books/" + id);
 //   },
   // Saves a work order ticket to the database
-  saveWorkOrder: function(newWorkorder) {
-    return axios.post("/api/CreateWorkOrder", newWorkorder);
-  }
-};
+//   saveWorkOrder: function(newWorkOrder) {
+//     return axios.post("/CreateWorkOrder", newWorkOrder);
+    
+//   }
+// };
+// getNanabyID: function(unit_num) {
+//   return axios.get("OpenWorkOrder/" + unit_num);
+// },
