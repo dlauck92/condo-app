@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
-import Home from './components/Home/Home';
 import Dashboard from './components/Dashboard/Dashboard';
 import Form from './components/Form/Form';
 import Footer from './components/Footer/Footer';
@@ -84,17 +83,11 @@ class App extends Component {
             <Switch>
               <Route exact path='/LogIn' component={LogIn} />
               <Route exact path='/SignUp' component={SignUp} />
-              {/* <Route exact path='/' component={Home} />
-              <Route exact path='/Dashboard' component={Dashboard} />
-              <Route exact path='/Form' component={Form} /> */}
-              <SecretRoute
-              isAuthenticated={this.state.loggedIn}
-              exact path="/Home"
-              component={Home}
-            />
+              {/* <Route exact path='/Dashboard' component={Dashboard} />
+              <Route exact path='/Form' component={Form} /> */} */}
              <SecretRoute
               isAuthenticated={this.state.loggedIn}
-              exact path="/Dashboaad"
+              exact path="/Dashboard"
               component={Dashboard}
             />
              <SecretRoute

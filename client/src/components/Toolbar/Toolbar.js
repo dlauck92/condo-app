@@ -8,7 +8,7 @@ const toolbar = props => (
             <div>
                 <DrawerToggleButton click={props.drawerClickHandler} />
             </div>
-            <div className="toolbar__logo"><a href="/">CONDO CONNECT</a></div>
+            <div className="toolbar__logo"><a href="/">Condo and Home Owner Association Portal</a></div>
             <div className="spacer" />
             <div className="toolbar_navigation-items">
                 <ul>

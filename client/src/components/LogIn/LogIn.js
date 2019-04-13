@@ -52,11 +52,13 @@ class logIn extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
             return (
-                <div className="form-login">
-                    <i className="fas fa-lock"></i>
-                    <div className="LogInForm">
-                        <h1 className="h3 mb-3 font-weight-normal">Log In</h1>
-                        <label className="sr-only" htmlFor="username">Username</label>
+                <form>
+                    <div class="con">
+                        <header class="head-form">
+                            <h2>Log In</h2>
+                            <h3>Welcome to CHAP!<br />Please Log in to Continue</h3>
+                        </header>
+                        <i class="fa fa-user icon"></i>
                         <input
                             className="form-control"
                             placeholder="Username"
@@ -68,7 +70,6 @@ class logIn extends Component {
                             autoFocus
                         />
                         <br />
-                        <label className="sr-only" htmlFor="password">Password</label>
                         <input
                             className="form-control"
                             placeholder="Password"
@@ -80,14 +81,15 @@ class logIn extends Component {
                         />
                         <br />
                         <button
-                            className="btn btn-lg btn-primary btn-block mt-3"
+                            className="log-in"
                             onClick={this.handleSubmit}
                             type="submit"
                         >Log In</button>
-
-                        <p className="mt-5 mb-3 text-muted">© 2019</p>
                     </div>
-                </div>
+                    <div>
+                        <h3>New to CHAP? Click <a href="/SignUp">HERE</a> to register</h3>
+                    </div>
+                </form>
             );
         }
     }
