@@ -1,7 +1,7 @@
 .footer {
     background-color: #521751;
     color: white;
-    position: fixed;
+    position: relative;
     right: 0;
     bottom: 0;
     left: 0;
