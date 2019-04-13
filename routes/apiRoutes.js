@@ -38,7 +38,7 @@ module.exports = function (app, ) {
 
   //find all closed workers by unit number
   app.get("/ClosedWorkOrder/:unit_num", function (req, res) {
-    db.WorkOrder.findAll({
+    db.WorkOrder.find({
 
       ticket_title: req.body.ticket_title,
       ticket_body: req.body.ticket_body,
@@ -59,7 +59,7 @@ module.exports = function (app, ) {
   // find all open work orders by unit number
   app.get("/OpenWorkOrder/:unit_num", function (req, res) {
 
-    db.WorkOrder.findAll({
+    db.WorkOrder.find({
       ticket_title: req.body.ticket_title,
       ticket_body: req.body.ticket_body,
       unit_num: req.body.unit_num,

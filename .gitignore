@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/client/node_modules
 /.pnp
 .pnp.js
 
@@ -23,3 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 config.json
 package-lock.json
+/client/package-lock.json

@@ -1,13 +1,13 @@
 
---  DROP DATABASE IF EXISTS condo_App_db;
+-- DROP DATABASE IF EXISTS condoApp_db;
 -- -- Creates the "condoApp_db" database 
 -- CREATE DATABASE condoApp_db;
 
 -- USE condoApp_db;
 
 -- Values for testing purposes
--- INSERT INTO Users (userName, email, password, lastLogin, status, user_profile_pic,first_name,last_name,address,phone,owner,boardManager,tentant,createdAt, updatedAt)
--- VALUES ('tlmclaughlin1966@gmail.com', 'tlmclaughlin1966@gmail.com', 'password','2019-02-11 12:11:22.111','active', 'pic.jpeg','David',' Mclaughlin','248 Westberry circle','330-111-1111','1','1','1','2019-02-11 12:11:22.111','2019-02-11 12:11:22.111');
+-- INSERT INTO Users (firstname, lastname, username, about, email, password, last_login, status, createdAt, updatedAt)
+-- VALUES ('David','McLaughlin', 'tlmclaughlin1966@gmail.com', 'owner', 'tlmclaughlin1966@gmail.com', 'password','2019-02-11 12:11:22.111','active','2019-02-11 12:11:22.111','2019-02-11 12:11:22.111');
 
 
 -- INSERT INTO Posts (post_title, post_body, createdAt, updatedAt, UserId)
