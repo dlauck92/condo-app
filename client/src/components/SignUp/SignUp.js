@@ -79,12 +79,10 @@ class SignUp extends Component {
                         />
                         <br />
                         <button
-                            className="btn btn-lg btn-primary btn-block mt-3"
+                            className="button"
                             onClick={this.handleSubmit}
                             type="submit"
                         >Sign up</button>
-
-                        <p className="mt-5 mb-3 text-muted">© 2019</p>
                     </div>
                 </div>
 
