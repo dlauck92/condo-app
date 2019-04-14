@@ -21,10 +21,15 @@ class logIn extends Component {
         });
     }
 
+    onKeyPress = (e) => {
+        if (e.which === 13) {
+            this.handleSubmit(e);
+        }
+    }
+
     handleSubmit(event) {
         event.preventDefault();
         console.log('handleSubmit');
-
         axios.post('/user/login', {
             username: this.state.username,
             password: this.state.password
@@ -53,12 +58,12 @@ class logIn extends Component {
         } else {
             return (
                 <form>
-                    <div class="con">
-                        <header class="head-form">
+                    <div className="con">
+                        <header className="head-form" onKeyPress={this.onKeyPress}>
                             <h2>Log In</h2>
                             <h3>Welcome to CHAP!<br />Please Log in to Continue</h3>
                         </header>
-                        <i class="fa fa-user icon"></i>
+                        <i className="fa fa-user icon"></i>
                         <input
                             className="form-control"
                             placeholder="Username"

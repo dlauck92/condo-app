@@ -27,7 +27,7 @@ module.exports = function (sequelize, DataTypes) {
     // WorkOrder.associate = function (models) {
     //     WorkOrder.belongsTo(models.User, {
     //         foreignKey: {
-    //             allowNull: true
+    //             allowNull: false
     //         }
     //     });
     // };

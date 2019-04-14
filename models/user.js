@@ -1,6 +1,5 @@
-/* eslint-disable max-lines-per-function */
 module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define("user", {
+    var User = sequelize.define("User", {
         id: {
             autoIncrement: true,
             primaryKey: true,
@@ -67,5 +66,32 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         }
-       
+         
     });
+    // userSchema.methods = {
+    //     checkPassword: function (inputPass) {
+    //         return bcrypt.compareSync(inputPass, this.password);
+    //     },
+    //     hashPassword: userPassword => {
+    //         return bcrypt.hashSync(userPassword, 10);
+    //     }
+    // }
+    
+    // userSchema.pre('save', function (next) {
+    //     if (!this.password) {
+    //         next();
+    //     } else {
+    //         this.password = this.hashPassword(this.password);
+    //         next();
+    //     }
+    // });
+    // User.associate = function (models) {
+    //     User.hasMany(models.Post,models.WorkOrder, {  
+    //         onDelete: "cascade"
+    //     });
+    // };
+
+
+
+    return User;
+};

@@ -1,4 +1,5 @@
 var db = require("../models");
+
 module.exports = function (app, ) {
 
 
@@ -82,6 +83,30 @@ module.exports = function (app, ) {
     }).then(WorkOrder => {
       res.json(WorkOrder);
     });
+  });
+
+  app.post("/user", function (req, res) {
+    db.User.create({
+      username: req.body.username,
+      password: req.body.password,
+      
+    }).then(newUser => {
+      res.json(newUser);
+      console.log("apiRoutes sends new user", newUser);
+    }).catch(err => res.send(err)
+    );
+  });
+
+  app.get("/user", function (req, res) {
+    db.User.findOne({
+      where: {
+        username: req.body.username
+      }
+    }).then(isUser => {
+      res.json(isUser);
+      console.log("new user", isUser);
+    }).catch(err => res.send(err)
+    );
   });
 
 };
