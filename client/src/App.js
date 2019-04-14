@@ -6,16 +6,12 @@ import Backdrop from './components/Backdrop/Backdrop';
 import Dashboard from './components/Dashboard/Dashboard';
 import Form from './components/Form/Form';
 import Footer from './components/Footer/Footer';
-<<<<<<< HEAD
 import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
 import SecretRoute from './components/SecretRoute/SecretRoute';
 import Cards from './components/Cards/Cards';
-=======
-
 // import SignUp from './components/SignUp/SignUp';
 // import LogIn from './components/LogIn/LogIn';
->>>>>>> b93fb3e93013920b442c52edc51bb05f57820155
 import axios from 'axios'
 
 
