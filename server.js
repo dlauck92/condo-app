@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 
 // required for passport
 app.use(session({
-	secret: 'puppy-heaven',
+	secret: 'condoapp',
 	resave: true,
 	saveUninitialized: true
  } )); // session secret
