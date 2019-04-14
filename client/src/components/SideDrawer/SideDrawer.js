@@ -22,10 +22,13 @@ const sideDrawer = props => {
                     <a href="/Form">Work Orders</a>
                 </li>
                 <li>
-                    <a href="/">About</a>
+                    <a href="/About">About</a>
                 </li>
                 <li>
-                    <a href="/">Contact</a>
+                    <a href="/Maintenance">Maintenance</a>
+                </li>
+                <li>
+                    <a href="/Contact">Contact</a>
                 </li>
             </ul>
         </nav>);

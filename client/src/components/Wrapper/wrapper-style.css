@@ -1,0 +1,17 @@
+/* .wrapper {
+    margin-bottom: 0;
+    background: #ECEFF1;
+    height: 100%;
+    max-height: auto;
+    display: flex;
+    background-image: url("../img/background.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center;
+    background-size: cover;
+    overflow:  auto;
+    position: relative;
+} */
