@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* eslint-disable consistent-return */
 /* eslint-disable no-sync */
 /* eslint-disable max-params */
@@ -118,8 +117,7 @@ module.exports = (passport, user) => {
         }
     ));
 };
- 
-=======
+
 //load bcrypt
 var bCrypt = require('bcrypt-nodejs');
 
@@ -128,11 +126,9 @@ module.exports = function(passport,user){
 var User = user;
 var LocalStrategy = require('passport-local').Strategy;
 
-
 passport.serializeUser(function(user, done) {
         done(null, user.id);
     });
-
 
 // used to deserialize the user
 passport.deserializeUser(function(id, done) {
@@ -147,7 +143,6 @@ passport.deserializeUser(function(id, done) {
 
 });
 
-
 passport.use('local-signup', new LocalStrategy(
 
   {           
@@ -158,7 +153,6 @@ passport.use('local-signup', new LocalStrategy(
 
   function(req, email, password, done){
      
-
     var generateHash = function(password) {
     return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
     };
@@ -180,7 +174,6 @@ passport.use('local-signup', new LocalStrategy(
       lastname: req.body.lastname
       };
 
-
       User.create(data).then(function(newUser,created){
         if(!newUser){
           return done(null,false);
@@ -190,25 +183,14 @@ passport.use('local-signup', new LocalStrategy(
           return done(null,newUser);
           
         }
-
-
       });
     }
-
-
   }); 
-
-
-
 }
-
-
-
 ));
   
 //LOCAL SIGNIN
 passport.use('local-signin', new LocalStrategy(
-  
 {
 
 // by default, local strategy uses username and password, we will override with email
@@ -254,4 +236,3 @@ function(req, email, password, done) {
 ));
 
 }
->>>>>>> b93fb3e93013920b442c52edc51bb05f57820155
