@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 module.exports = {
   signup: (req, res) => {
       res.render('signup');
@@ -18,7 +17,7 @@ module.exports = {
       });
   }
 };
-=======
+
 var exports = module.exports = {}
 
 
@@ -47,4 +46,3 @@ exports.logout = function(req,res){
   });
 
 }
->>>>>>> b93fb3e93013920b442c52edc51bb05f57820155
