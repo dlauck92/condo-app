@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 module.exports = {
   signup: (req, res) => {
       res.render('signup');
@@ -18,33 +17,3 @@ module.exports = {
       });
   }
 };
-=======
-var exports = module.exports = {}
-
-
-exports.signup = function(req,res){
-
-	res.render('signup'); 
-
-}
-
-exports.signin = function(req,res){
-
-	res.render('signin'); 
-
-}
-
-exports.dashboard = function(req,res){
-
-	res.render('dashboard'); 
-
-}
-
-exports.logout = function(req,res){
-
-  req.session.destroy(function(err) {
-  res.redirect('/');
-  });
-
-}
->>>>>>> b93fb3e93013920b442c52edc51bb05f57820155

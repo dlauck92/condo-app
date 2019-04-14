@@ -1,12 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-<<<<<<< HEAD
 **/node_modules
-=======
-/node_modules
-/client/node_modules
->>>>>>> b93fb3e93013920b442c52edc51bb05f57820155
 /.pnp
 .pnp.js
 
@@ -29,7 +24,3 @@ yarn-debug.log*
 yarn-error.log*
 config.json
 package-lock.json
-<<<<<<< HEAD
-=======
-/client/package-lock.json
->>>>>>> b93fb3e93013920b442c52edc51bb05f57820155
