@@ -15,7 +15,6 @@ import Maintenance from './components/Maintenance/Maintenance';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 // import Wrapper from './components/Wrapper/index';
-// import Background from './component/Background/Background';
 
 class App extends Component {
   constructor() {
