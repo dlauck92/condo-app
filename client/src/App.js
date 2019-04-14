@@ -35,7 +35,7 @@ class App extends Component {
   }
 
   getUser() {
-    axios.get('/user/').then(response => {
+    axios.get('/user').then(response => {
       console.log('Get user response: ');
       console.log(response.data);
       if (response.data.user) {
@@ -82,7 +82,7 @@ class App extends Component {
           {backdrop}
           <main style={{ marginTop: '64px' }}>
             <Switch>
-              <Route exact path='/LogIn' component={LogIn} />
+              <Route exact path='/LogIn' component={LogIn} updateUser={this.updateUser}/>
               <Route exact path='/SignUp' component={SignUp} />
               {/* <Route exact path='/Dashboard' component={Dashboard} />
               <Route exact path='/Form' component={Form} /> */} 

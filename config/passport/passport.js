@@ -3,6 +3,7 @@
 /* eslint-disable max-params */
 /* eslint-disable no-shadow */
 /* eslint-disable max-lines-per-function */
+
 const bCrypt = require('bcrypt-nodejs');
 
 module.exports = (passport, user) => {
@@ -26,33 +27,33 @@ module.exports = (passport, user) => {
 
     passport.use('local-signup', new LocalStrategy(
         {
-            usernameField: 'email',
+            usernameField: 'username',
             passwordField: 'password',
             passReqToCallback: true
         },
-        function (req, email, password, done) {
+        function (req, username, password, done) {
             let generateHash = function (password) {
                 return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
             };
 
             User.findOne({
                 where: {
-                    email
+                    username
                 }
             }).then((user) => {
                 if (user) {
                     return done(null, false, {
-                        message: 'That email is already taken'
+                        message: 'incorrect username'
                     });
                 }
                 let userPassword = generateHash(password);
 
                 let data = {
                     email,
+                    about,
                     password: userPassword,
                     name: req.body.name,
                     username: req.body.username,
-                    location: req.body.location,
                    
                 };
 
@@ -75,12 +76,12 @@ module.exports = (passport, user) => {
         {
 
             // by default, local strategy uses username and password, we will override with email
-            usernameField: 'email',
+            usernameField: 'username',
             passwordField: 'password',
             passReqToCallback: true // allows us to pass back the entire request to the callback
         },
 
-        function (req, email, password, done) {
+        function (req, username, password, done) {
 
             let User = user;
 
@@ -88,10 +89,10 @@ module.exports = (passport, user) => {
                 return bCrypt.compareSync(password, userpass);
             };
 
-            User.findOne({ where: { email } }).then(function (user) {
+            User.findOne({ where: { username } }).then(function (user) {
 
                 if (!user) {
-                    return done(null, false, { message: 'Email does not exist' });
+                    return done(null, false, { message: 'Incorrect username' });
                 }
 
                 if (!isValidPassword(user.password, password)) {
