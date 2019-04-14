@@ -28,7 +28,8 @@ const sideDrawer = props => {
                     <a href="/">Contact</a>
                 </li>
             </ul>
-        </nav>);
+        </nav>
+        );
 };
 
 export default sideDrawer;

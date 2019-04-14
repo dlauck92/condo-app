@@ -1,60 +1,71 @@
-module.exports = function (sequelize, DataTypes) {
-    var User = sequelize.define("User", {
-        userName: {
+/* eslint-disable max-lines-per-function */
+module.exports = (sequelize, DataTypes) => {
+    const User = sequelize.define("user", {
+        id: {
+            autoIncrement: true,
+            primaryKey: true,
+            type: DataTypes.INTEGER
+        },
+        name: {
             type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
             validate: {
-                len: [1]
+                notEmpty: {
+                    args: true,
+                    msg: "Required"
+                },
+                len: {
+                    args: [
+                        1,
+                        140
+                    ],
+                    msg: "String length is not in this range"
+                }
             }
         },
+        username: {
+            type: DataTypes.STRING,
+            validate: {
+                notEmpty: {
+                    args: true,
+                    msg: "Required"
+                },
+                len: {
+                    args: [
+                        6,
+                        40
+                    ],
+                    msg: "Username must be at least 6 characters in length"
+                }
+            }
+        },
+        about: {
+            type: DataTypes.STRING,
+                },
+        
         email: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: { isEmail: true },
-            unique: true
+            validate: {
+                isEmail: true
+            }
+
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        lastLogin: DataTypes.DATE,
+        // eslint-disable-next-line camelcase
+        last_login: {
+            type: DataTypes.DATE
+        },
         status: {
-            type: DataTypes.ENUM("active", "inactive"),
-            defaultValue: "active"
+            // eslint-disable-next-line new-cap
+            type: DataTypes.ENUM('active', 'inactive'),
+            defaultValue: 'active'
         },
-        user_profile_pic: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                len: [1]
-            }
-        },
-
-        first_name: DataTypes.STRING,
         
-        last_name: DataTypes.STRING,
-        
-        address: DataTypes.STRING,
-        
-        phone: DataTypes.STRING,
-
-        owner: DataTypes.BOOLEAN,
-            
-        
-        boardManager: DataTypes.BOOLEAN,
-            
-    
-        tentant: DataTypes.BOOLEAN,
-            
-        
-        
+        admin: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        }
+       
     });
-    User.associate = function (models) {
-        User.hasMany(models.Post,models.WorkOder,models.Announcement, {
-            onDelete: "cascade"
-        });
-    };
-
-    return User;
-};

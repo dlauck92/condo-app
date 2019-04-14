@@ -12,6 +12,7 @@ import SecretRoute from './components/SecretRoute/SecretRoute';
 import Cards from './components/Cards/Cards';
 import axios from 'axios'
 
+
 class App extends Component {
   constructor() {
     super()
@@ -84,17 +85,15 @@ class App extends Component {
               <Route exact path='/LogIn' component={LogIn} />
               <Route exact path='/SignUp' component={SignUp} />
               {/* <Route exact path='/Dashboard' component={Dashboard} />
-              <Route exact path='/Form' component={Form} /> */} */}
+              <Route exact path='/Form' component={Form} /> */} 
              <SecretRoute
               isAuthenticated={this.state.loggedIn}
               exact path="/Dashboard"
-              component={Dashboard}
-            />
+              component={Dashboard}/>
              <SecretRoute
               isAuthenticated={this.state.loggedIn}
               exact path="/Form"
-              component={Form}
-            />
+              component={Form}/>
             </Switch>
           </main>
           <Cards />
