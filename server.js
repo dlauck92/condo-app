@@ -37,7 +37,7 @@ app.use(routes);
 require("./routes/apiRoutes.js")(app);
 require("./routes/user.js")
 
-var syncOptions = { force: false };
+var syncOptions = { force: true };
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
