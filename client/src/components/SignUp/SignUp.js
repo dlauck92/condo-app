@@ -32,6 +32,7 @@ class SignUp extends Component {
             if (!response.data.error) {
                 console.log('successful signup');
                 this.setState({
+                    loggedIn: true,
                     redirectTo: '/'
                 });
             } else {

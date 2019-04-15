@@ -97,6 +97,20 @@ module.exports = function (app, ) {
     );
   });
 
+  app.post("/user/login", function (req, res) {
+    db.User.findOne({
+      where: {
+        username: req.body.username,
+        password: req.body.password
+      }
+      
+    }).then(newUser => {
+      res.json(newUser);
+      console.log("apiRoutes sends logged in", newUser);
+    }).catch(err => res.send(err)
+    );
+  });
+
   app.get("/user", function (req, res) {
     db.User.findOne({
       where: {

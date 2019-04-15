@@ -44,7 +44,7 @@ class logIn extends Component {
                 });
                 //redirect home
                 this.setState({
-                    redirectTo: '/main'
+                    redirectTo: '/dashboard'
                 });
             }
         }).catch(error => {
