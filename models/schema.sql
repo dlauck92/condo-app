@@ -1,4 +1,5 @@
 -- DROP DATABASE IF EXISTS chap_db;
+
 -- -- Creates the "chap_db" database 
 -- CREATE DATABASE chap_db;
 
