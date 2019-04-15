@@ -3,7 +3,7 @@ import './Form.css';
 // import api from '../../utils/api';
 
 import axios from 'axios';
-class form extends React.Component {
+class Form extends React.Component {
     constructor() {
         super()
         this.state = {
@@ -59,4 +59,4 @@ class form extends React.Component {
     }
 }
 
-export default form;
+export default Form;

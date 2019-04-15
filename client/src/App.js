@@ -32,6 +32,8 @@ class App extends Component {
 
   updateUser(userObject) {
     this.setState(userObject);
+    console.log(userObject);
+
   }
 
   getUser() {
@@ -44,7 +46,9 @@ class App extends Component {
         this.setState({
           loggedIn: true,
           username: response.data.user.username
+
         });
+        console.log(response.data.user);
       } else {
         console.log('Get user: no user');
         this.setState({
@@ -82,18 +86,25 @@ class App extends Component {
           {backdrop}
           <main style={{ marginTop: '64px' }}>
             <Switch>
-              <Route exact path='/LogIn' component={LogIn} updateUser={this.updateUser}/>
-              <Route exact path='/SignUp' component={SignUp} />
-              {/* <Route exact path='/Dashboard' component={Dashboard} />
-              <Route exact path='/Form' component={Form} /> */} 
-             <SecretRoute
-              isAuthenticated={this.state.loggedIn}
-              exact path="/Dashboard"
-              component={Dashboard}/>
-             <SecretRoute
-              isAuthenticated={this.state.loggedIn}
-              exact path="/Form"
-              component={Form}/>
+              <Route
+                path='/LogIn'
+                render={(props) => <LogIn {...props} updateUser={this.updateUser} />}
+              />
+              <Route
+                path='/SignUp'
+                render={(props) => <SignUp {...props} />}
+              />
+              <Route exact path='/Dashboard' component={Dashboard} />
+                <Route exact path='/Form' component={Form} /> 
+              <SecretRoute
+                isAuthenticated={this.state.loggedIn}
+                exact path="/Dashboard"
+                render={(props) => <Dashboard {...props} />} />
+              <SecretRoute
+                isAuthenticated={this.state.loggedIn}
+                exact path="/Form"
+                render={(props) => <Form {...props} />} />
+
             </Switch>
           </main>
           <Cards />

@@ -8,20 +8,14 @@ var session  = require('express-session');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require("./models");
-var passport = require('./config/passport/passport.js');
-// var flash = require('connect-flash');
+// var passport = require('./config/passport/passport.js');
+var passport = require('./passport');
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-app.use(morgan('dev')); // log every request to the console
-
-
-
-// set up our express application
-
-// app.use(cookieParser()); // read cookies (needed for auth)
+app.use(morgan('dev')); //log every request to the console
 
 //for bodyParsar
 app.use(bodyParser.urlencoded({extended: true}));
@@ -30,12 +24,12 @@ app.use(bodyParser.json());
 // required for passport
 app.use(session({
 	secret: 'condoapp',
-	resave: true,
-	saveUninitialized: true
+	resave: false,
+	saveUninitialized: false
  } )); // session secret
-// app.use(passport.initialize());
-// app.use(passport.session()); // calls the deserializeUser
-// app.use(flash()); // use connect-flash for flash messages stored in session
+ //Passport
+app.use(passport.initialize());
+app.use(passport.session()); 
 
 
 // Routes

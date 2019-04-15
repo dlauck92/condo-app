@@ -43,9 +43,9 @@ class logIn extends Component {
                     username: response.data.username
                 });
                 //redirect home
-                this.setState({
-                    redirectTo: '/main'
-                });
+                 this.setState({
+                     redirectTo: '/Dashboard'
+                 });
             }
         }).catch(error => {
             console.log(`login error: ${error}`);

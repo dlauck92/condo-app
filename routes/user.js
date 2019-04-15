@@ -35,7 +35,7 @@ router.post('/user', (req, res) => {
     });
 });
 
-router.post('/login', function(req, res, next) {
+router.post('/user/login', function(req, res, next) {
     next();
 }, passport.authenticate('local'), (req, res) => {
     let userInfo = {

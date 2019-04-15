@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Redirect } from 'react-router-dom';
 
-const secretRoute = ({ component: Component, isAuthenticated, ...rest }) => {
+const SecretRoute = ({ component: Component, isAuthenticated, ...rest }) => {
 
     return (
         <Route
@@ -12,7 +12,7 @@ const secretRoute = ({ component: Component, isAuthenticated, ...rest }) => {
                 ) : (
                         <Redirect
                             to={{
-                                pathname: "/login",
+                                pathname: "/LogIn",
                                 state: { from: props.location }
                             }}
                         />
@@ -23,4 +23,4 @@ const secretRoute = ({ component: Component, isAuthenticated, ...rest }) => {
     );
 }
 
-export default secretRoute;
+export default SecretRoute;
