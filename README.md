@@ -1,4 +1,4 @@
-This is a Home Owner Association Application for Managers and Board members to communicate effectively with your fellow residents by posting your newsletters, meeting minutes, official documents and forms on your association website. Help reduce your printing, mailing and administrative costs plus provide residents 24/7 access to your neighborhood information.
+This is a Home Owner Association Application for Managers and Board members to communicate effectively with your fellow residents by posting your newsletters, meeting minutes, official documents and forms on your association website. The web application also includes a ticket system for creating maintenance work orders. This will Help reduce your printing, mailing and administrative costs plus provide residents 24/7 access to your neighborhood information.
 
 
 
