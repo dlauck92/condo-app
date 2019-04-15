@@ -11,12 +11,12 @@ class About extends Component {
 
   render() {
     return (
-      <div className="container bg-light border">
+      <div className="container bg-light border-radius: 50px">
         <div className="col-1-md"></div>
         <div className="col-10-md"></div>
-        <div class="d-flex flex-column"></div>
-        <h1 className="p-3 bg-dark text-white">Maintenance Page
-        </h1>
+        <div class="box">
+          <h1 className="p-3 text-white ">About CHAP</h1>
+        </div>
 
         {/* {this.state.items.map((item, index) => (
           //  console.log("item.fname= ",item.fname)
@@ -24,7 +24,28 @@ class About extends Component {
             {item.fname}
           </p>
         ))} */}
-      
+
+         {/* <div className="Admins">
+          <div className="container-fluid d-flex justify-content-center">
+            <div className="row">
+              <div className="col-md-4">
+                <About src="https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" title="Drew" />
+              </div>
+              <div className="col-md-4">
+                <About src="" title="Enrique" />
+              </div>
+              <div className="col-md-4">
+                <About src="" title="David" />
+              </div>
+              <div className="col-md-4">
+                <About src="" title="Mat" />
+              </div>
+            </div>
+
+          </div>
+        </div>  */}
+
+
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque velit, lobortis ut magna
           varius, blandit rhoncus sem. Morbi lacinia nisi ac dui fermentum, sed luctus urna tincidunt.
@@ -36,7 +57,9 @@ class About extends Component {
           malesuada fames ac ante ipsum primis in faucibus.
       </p>
 
-      <h2 className="p-3 bg-dark text-white">Conact Us</h2>
+        <div className="box2">
+          <h2 className="p-3 text-white">Admins</h2>
+        </div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque velit, lobortis ut magna
           varius, blandit rhoncus sem. Morbi lacinia nisi ac dui fermentum, sed luctus urna tincidunt.
@@ -49,8 +72,12 @@ class About extends Component {
       </p>
         <div className="col-1-md"></div>
       </div>
+
+
     );
   }
 }
+
+
 
 export default About;

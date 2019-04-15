@@ -53,36 +53,41 @@ class SignUp extends Component {
             return (
                 <div className="form-signup">
                     <i className="fas fa-lock"></i>
+                        <h1 className="h3 mb-3 font-weight-bold">Register Here!</h1>
                     <div className="SignupForm">
-                        <h1 className="h3 mb-3 font-weight-normal">Sign Up</h1>
-                        <label className="sr-only" htmlFor="username">Username</label>
-                        <input
-                            className="form-control"
-                            placeholder="Username"
-                            type="text"
-                            name="username"
-                            value={this.state.username}
-                            onChange={this.handleChange}
-                            required
-                            autoFocus
-                        />
-                        <br />
-                        <label className="sr-only" htmlFor="password">Password</label>
-                        <input
-                            className="form-control"
-                            placeholder="Password"
-                            type="password"
-                            name="password"
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                            required
-                        />
-                        <br />
-                        <button
-                            className="button"
-                            onClick={this.handleSubmit}
-                            type="submit"
-                        >Sign up</button>
+                        <div className="container bg-light border-radius: 50px">
+                                <label className="sr-only" htmlFor="username">Username</label>
+                                <input
+                                    className="form-control"
+                                    placeholder="Username"
+                                    type="text"
+                                    name="username"
+                                    value={this.state.username}
+                                    onChange={this.handleChange}
+                                    required
+                                    autoFocus
+                                />
+                                <br />
+                                <label className="sr-only" htmlFor="password">Password</label>
+                                <input
+                                    className="form-control"
+                                    placeholder="Password"
+                                    type="password"
+                                    name="password"
+                                    value={this.state.password}
+                                    onChange={this.handleChange}
+                                    required
+                                />
+                                <br />
+                           
+                                <button
+                                    className="button"
+                                    onClick={this.handleSubmit}
+                                    type="submit"
+                                >Sign up</button>
+                           
+                        </div>
+
                     </div>
                 </div>
 

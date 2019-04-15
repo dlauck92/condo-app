@@ -48,6 +48,7 @@ header h3 {
     font-family: 'Playfair Display', serif;
     color: #3e403f;
     padding: 0px 10px 0px 0px;
+    background: transparent;
 }
 
 .input-item {

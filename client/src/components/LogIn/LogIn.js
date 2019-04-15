@@ -84,7 +84,7 @@ class logIn extends Component {
                             className="log-in"
                             onClick={this.handleSubmit}
                             type="submit"
-                        >Log In</button>
+                        >Log In <a href="/dashboard"></a></button>
                     </div>
                     <div>
                         <h3>New to CHAP? Click <a href="/SignUp">HERE</a> to register</h3>

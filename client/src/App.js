@@ -9,11 +9,12 @@ import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
 import SecretRoute from './components/SecretRoute/SecretRoute';
-import Cards from './components/Cards/Cards';
+// import Cards from './components/Cards/Cards';
 import axios from 'axios';
 import Maintenance from './components/Maintenance/Maintenance';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
+
 // import Wrapper from './components/Wrapper/index';
 
 class App extends Component {
@@ -121,7 +122,7 @@ class App extends Component {
               />
             </Switch>
           </main>
-          <Cards />
+          {/* <Cards /> */}
           <Footer />
           {/* </Wrapper> */}
         </div>
