@@ -21,14 +21,14 @@ class App extends Component {
       username: null,
     }
 
-    this.getUser = this.getUser.bind(this);
-    this.componentDidMount = this.componentDidMount.bind(this);
+    // this.getUser = this.getUser.bind(this);
+    // this.componentDidMount = this.componentDidMount.bind(this);
     this.updateUser = this.updateUser.bind(this);
   }
 
-  componentDidMount() {
-    this.getUser();
-  }
+  // componentDidMount() {
+  //   this.getUser();
+  // }
 
   updateUser(userObject) {
     this.setState(userObject);
