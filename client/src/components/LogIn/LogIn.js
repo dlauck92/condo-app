@@ -46,7 +46,7 @@ class LogIn extends Component {
 
                 // redirect home
                 this.setState({
-                    redirectTo: '/'
+                    redirectTo: '/Dashboard'
                 });
             }
           

@@ -7,7 +7,7 @@
 -- USE condoApp_db;
 
 -- DREW'S DB NAME --
--- USE chap_db;
+ USE chap_db;
 
 -- Values for testing purposes
  INSERT INTO Users (name, username, about, email, password, last_login, status, createdAt, updatedAt)
