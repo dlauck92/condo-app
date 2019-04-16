@@ -80,14 +80,16 @@ class logIn extends Component {
                             required
                         />
                         <br />
-                        <button
+                        <button 
                             className="log-in"
                             onClick={this.handleSubmit}
-                            type="submit"
-                        >Log In <a href="/dashboard"></a></button>
+                            type="submit" 
+                        >Log In </button>
                     </div>
                     <div>
+                        <div className="chap">
                         <h3>New to CHAP? Click <a href="/SignUp">HERE</a> to register</h3>
+                        </div>
                     </div>
                 </form>
             );

@@ -2,6 +2,7 @@
     width: 100px;
 }
 
+
 form {
     width: 450px;
     min-height: 300px;
@@ -48,7 +49,7 @@ header h3 {
     font-family: 'Playfair Display', serif;
     color: #3e403f;
     padding: 0px 10px 0px 0px;
-    background: transparent;
+    
 }
 
 .input-item {
@@ -81,6 +82,10 @@ input[id="form-control"] {width: 250px;}
 input:focus {
     transform: translateX(-2px);
     border-radius: 5px;
+}
+
+.chap{
+    position: absolute;
 }
 
 button {

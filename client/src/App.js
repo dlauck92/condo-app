@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import './App.css';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
@@ -9,13 +10,13 @@ import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
 import SecretRoute from './components/SecretRoute/SecretRoute';
-// import Cards from './components/Cards/Cards';
+import Cards from './components/Cards/Cards';
 import axios from 'axios';
 import Maintenance from './components/Maintenance/Maintenance';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
-
-// import Wrapper from './components/Wrapper/index';
+import TicketList from './components/TicketList/TicketList';
+import Wrapper from './components/Wrapper/index';
 
 class App extends Component {
   constructor() {
@@ -79,9 +80,10 @@ class App extends Component {
       backdrop = <Backdrop click={this.backdropClickHandler} />
     }
     return (  
+      
       <Router>
         <div style={{ height: '100%' }}>
-        {/* <Wrapper>  */}
+        <Wrapper> 
           <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backdrop}
@@ -91,10 +93,11 @@ class App extends Component {
               <Route exact path='/SignUp' component={SignUp} />
               {/* <Route exact path='/Dashboard' component={Dashboard} />
               <Route exact path='/Form' component={Form} /> */} 
-             <SecretRoute
-              isAuthenticated={this.state.loggedIn}
+             <SecretRoute 
+              isAuthenticated={this.state.loggedIn} 
               exact path="/Dashboard"
-              component={Dashboard} />
+              component={Dashboard}
+              />
               <Route exact path='/Maintenance' component={Maintenance} />
               <Route exact path='/Contact' component={Contact} />
               <Route exact path='/Dashboard' component={Dashboard}  />
@@ -108,7 +111,7 @@ class App extends Component {
              <SecretRoute 
               isAuthenticated={this.state.loggedIn}
               exact path="/Dashboard" 
-              component={Dashboard}
+              component={Dashboard || Cards}
             />
              <SecretRoute
               isAuthenticated={this.state.loggedIn}
@@ -120,11 +123,20 @@ class App extends Component {
                 path="/Maintenance"
                 component={Maintenance}
               />
+            <SecretRoute
+                isAuthenticated={this.state.loggedIn}
+                path="/TicketList"
+                component={TicketList}
+              />
+            {/* <SecretRoute
+                isAuthenticated={this.state.loggedIn}
+                path="/Cards"
+                component={Cards}
+              /> */}
             </Switch>
           </main>
-          {/* <Cards /> */}
           <Footer />
-          {/* </Wrapper> */}
+          </Wrapper>
         </div>
       </Router>
       

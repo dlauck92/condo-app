@@ -1,37 +1,46 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom';
 import './SideDrawer.css';
+
+
+
+
+
 
 const sideDrawer = props => {
     let drawerClasses = 'side-drawer';
     if (props.show) {
         drawerClasses = 'side-drawer open';
     }
+
     return (
         <nav className={drawerClasses}>
             <ul>
                 <li>
-                    <a href="/LogIn">Sign In</a>
+                    <Link to="/LogIn">Login</Link>
                 </li>
                 <li>
-                    <a href="/SignUp">Register</a>
+                    <Link to="/SignUp">Sign Up</Link>
                 </li>
                 <li>
-                    <a href="/Dashboard">Dashboard</a>
+                    <Link to="/Dashboard">Dashboard</Link>
                 </li>
                 <li>
-                    <a href="/Form">Work Orders</a>
+                    <Link to="/Form">Work Orders</Link>
                 </li>
                 <li>
-                    <a href="/About">About</a>
+                    <Link to="/About">About</Link>
                 </li>
                 <li>
-                    <a href="/Maintenance">Maintenance</a>
-                </li>
-                <li>
-                    <a href="/Contact">Contact</a>
+                    <Link to="/Contact">Contact</Link>
                 </li>
             </ul>
-        </nav>);
-};
+
+        </nav>
+
+    );
+}
+
 
 export default sideDrawer;
