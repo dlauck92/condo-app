@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
-// import Dashboard from './components/Dashboard/Dashboard';
-// import Form from './components/Form/Form';
+import Dashboard from './components/Dashboard/Dashboard';
+import Form from './components/Form/Form';
 import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
@@ -98,8 +98,8 @@ class App extends Component {
                 path='/SignUp'
                 render={(props) => <SignUp {...props} />}
               />
-              {/* <Route exact path='/Dashboard' component={Dashboard} /> */}
-                {/* <Route exact path='/Form' component={Form} />  */}
+              <Route exact path='/Dashboard' component={Dashboard} />
+                <Route exact path='/Form' component={Form} /> 
               {/* <SecretRoute
                 isAuthenticated={this.state.loggedIn}
                 exact path="/Dashboard"
