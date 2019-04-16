@@ -49,7 +49,6 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"node server.js\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"

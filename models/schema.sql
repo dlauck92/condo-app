@@ -1,9 +1,13 @@
 -- DROP DATABASE IF EXISTS chap_db;
 
--- -- Creates the "chap_db" database 
+-- Creates the "chap_db" database --
 -- CREATE DATABASE chap_db;
 
- USE chap_db;
+--DAVID'S DB NAME --
+-- USE condoApp_db;
+
+-- DREW'S DB NAME --
+-- USE chap_db;
 
 -- Values for testing purposes
  INSERT INTO Users (name, username, about, email, password, last_login, status, createdAt, updatedAt)
