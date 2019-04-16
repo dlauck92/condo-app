@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 // import { Redirect } from 'react-router-dom';
 import './SideDrawer.css';
 
@@ -21,7 +21,7 @@ const sideDrawer = props => {
                     <Link to="/LogIn">Login</Link>
                 </li>
                 <li>
-                    <Link to="/SignUp">Sign Up</Link>
+                    <Link to="/SignUp">Register</Link>
                 </li>
                 <li>
                     <Link to="/Dashboard">Dashboard</Link>

@@ -42,10 +42,10 @@ class logIn extends Component {
                     loggedIn: true,
                     username: response.data.username
                 });
-                //redirect home
-                // this.setState({
-                //     redirectTo: '/dashboard'
-                // });
+                // redirect home
+                this.setState({
+                    redirectTo: '/'
+                });
             }
         }).catch(error => {
             console.log(`login error: ${error}`);

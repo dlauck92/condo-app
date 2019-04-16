@@ -19,6 +19,7 @@ class App extends Component {
     this.state = {
       loggedIn: false,
       username: null,
+      redirectTo: '/LogIn',
     }
 
     this.getUser = this.getUser.bind(this);
@@ -27,7 +28,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getUser();
+    // this.getUser();
+    // redirect home
+    this.setState({
+      redirectTo: '/LogIn'
+  });
   }
 
   updateUser(userObject) {
@@ -94,16 +99,18 @@ class App extends Component {
                 path='/SignUp'
                 render={(props) => <SignUp {...props} />}
               />
-              <Route exact path='/Dashboard' component={Dashboard} />
-                <Route exact path='/Form' component={Form} /> 
+              {/* <Route exact path='/Dashboard' component={Dashboard} /> */}
+                {/* <Route exact path='/Form' component={Form} />  */}
               <SecretRoute
                 isAuthenticated={this.state.loggedIn}
                 exact path="/Dashboard"
-                render={(props) => <Dashboard {...props} />} />
+                component={Dashboard} 
+                />
               <SecretRoute
                 isAuthenticated={this.state.loggedIn}
                 exact path="/Form"
-                render={(props) => <Form {...props} />} />
+                component={Form} 
+                />
 
             </Switch>
           </main>

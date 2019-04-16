@@ -3,7 +3,7 @@
 -- -- Creates the "condoApp_db" database 
 -- CREATE DATABASE condoApp_db;
 
-USE condoApp_db;
+-- USE condoApp_db;
 
 -- Values for testing purposes
 -- INSERT INTO Users (name, username, about, email, password, last_login, status, createdAt, updatedAt)

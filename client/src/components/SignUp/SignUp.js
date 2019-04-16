@@ -33,7 +33,7 @@ class SignUp extends Component {
                 console.log('successful signup');
                 this.setState({
                     loggedIn: true,
-                    redirectTo: '/'
+                    redirectTo: '/LogIn'
                 });
             } else {
                 console.log('username already taken');
