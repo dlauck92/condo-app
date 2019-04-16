@@ -9,12 +9,12 @@ const toolbar = props => (
             <div>
                 <DrawerToggleButton click={props.drawerClickHandler} />
             </div>
-            <div className="toolbar__logo"><a href="/">Condo and Home Owner Association Portal</a></div>
+            <div className="toolbar__logo"><Link to="/">Condo & Home Owner Association Portal</Link></div>
             <div className="spacer" />
             <div className="toolbar_navigation-items">
                 <ul>
                     <li>
-                        <Link to='/LogIn'>LogIn</Link>
+                        <Link to='/LogIn'>Log In</Link>
                     </li>
                     <li>/</li>
                     <li>

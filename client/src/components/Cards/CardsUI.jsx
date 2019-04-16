@@ -10,9 +10,9 @@ const Card = props => {
             <div className="card-body text-dark">
             <h4 className="card-title">{props.title}</h4>
             <p className="card-text text-secondary">
-                Ticket System
+                Click "Submit" for more information!
             </p>
-            <a href="Form" className="btn btn-outline-success">Go Anywhere</a>
+            <a href="Form" className="btn btn-outline-success">Submit</a>
             </div>
         </div>
     );
