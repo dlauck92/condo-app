@@ -3,8 +3,8 @@ var express = require("express");
 var app = express();
 var routes = require('./routes');
 var PORT = process.env.PORT || 3001;
-var cookieParser = require('cookie-parser');
 var session  = require('express-session');
+// var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require("./models");
@@ -22,21 +22,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 // required for passport
-// add & configure middleware
 app.use(session({
-  // genid: (req) => {
-  //   console.log('Inside the session middleware')
-  //   console.log(req.sessionID)
-  //   // return uuid() // use UUIDs for session IDs
-  // },
 	secret: 'condoapp',
 	resave: false,
-	saveUninitialized: true
+	saveUninitialized: false
  } )); // session secret
+ 
  //Passport
 app.use(passport.initialize());
 app.use(passport.session()); 
-
 
 // Routes
 app.use(routes);
