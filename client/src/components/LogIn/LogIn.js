@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 import './LogIn.css';
 
-class logIn extends Component {
+class LogIn extends Component {
     constructor() {
         super()
         this.state = {
@@ -62,39 +63,40 @@ class logIn extends Component {
                 <form>
                     <div className="con">
                         <header className="head-form" onKeyPress={this.onKeyPress}>
-                            <h2>Log In</h2>
-                            <h3>Welcome to CHAP!<br />Please Log in to Continue</h3>
+                            <h2 className="login-H2">Log In</h2>
+                            <br></br>
+                            <h3 className="login-H3">Welcome to Chap!<br/>Please Log in to Continue</h3>
                         </header>
-                        <i className="fa fa-user icon"></i>
-                        <input
-                            className="form-control"
-                            placeholder="Username"
-                            type="text"
-                            name="username"
-                            value={this.state.username}
-                            onChange={this.handleChange}
-                            required
-                            autoFocus
-                        />
-                        <br />
-                        <input
-                            className="form-control"
-                            placeholder="Password"
-                            type="password"
-                            name="password"
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                            required
-                        />
-                        <br />
-                        <button
-                            className="log-in"
-                            onClick={this.handleSubmit}
-                            type="submit"
-                        >Log In</button>
+                            <i className="fa fa-user icon"></i>
+                            <input
+                                className="form-control"
+                                placeholder="Username"
+                                type="text"
+                                name="username"
+                                value={this.state.username}
+                                onChange={this.handleChange}
+                                required
+                                autoFocus
+                            />
+                        <br/>
+                            <input
+                                className="form-control"
+                                placeholder="Password"
+                                type="password"
+                                name="password"
+                                value={this.state.password}
+                                onChange={this.handleChange}
+                                required
+                            />
+                        <br/>
+                            <button
+                                className="log-in-btn"
+                                onClick={this.handleSubmit}
+                                type="submit"
+                            >Log In</button>
                     </div>
-                    <div>
-                        <h3>New to CHAP? Click <a href="/SignUp">HERE</a> to register</h3>
+                    <div className="registerDiv">
+                        <h3 className="register">New to Chap?<br></br>Click <Link to="/SignUp">HERE</Link> to register</h3>
                     </div>
                 </form>
             );
@@ -102,4 +104,4 @@ class logIn extends Component {
     }
 }
 
-export default logIn;
+export default LogIn;

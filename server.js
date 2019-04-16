@@ -5,7 +5,6 @@ var routes = require('./routes');
 var PORT = process.env.PORT || 3001;
 var cookieParser = require('cookie-parser');
 var session  = require('express-session');
-
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require("./models");
@@ -25,11 +24,11 @@ app.use(bodyParser.json());
 // required for passport
 // add & configure middleware
 app.use(session({
-  genid: (req) => {
-    console.log('Inside the session middleware')
-    console.log(req.sessionID)
-    return uuid() // use UUIDs for session IDs
-  },
+  // genid: (req) => {
+  //   console.log('Inside the session middleware')
+  //   console.log(req.sessionID)
+  //   // return uuid() // use UUIDs for session IDs
+  // },
 	secret: 'condoapp',
 	resave: false,
 	saveUninitialized: true
