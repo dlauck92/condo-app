@@ -1,6 +1,6 @@
 import React from 'react';
 import './Dashboard.css';
-import Cards from './components/Cards/Cards';
+import Cards from '../Cards/Cards';
 
 const Dashboard = props => (
   <div>
