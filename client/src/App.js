@@ -8,7 +8,7 @@ import Form from './components/Form/Form';
 import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
-import SecretRoute from './components/SecretRoute/SecretRoute';
+// import SecretRoute from './components/SecretRoute/SecretRoute';
 import Cards from './components/Cards/Cards';
 import axios from 'axios'
 
@@ -90,6 +90,11 @@ class App extends Component {
           {backdrop}
           <main style={{ marginTop: '64px' }}>
             <Switch>
+            <Route
+                exact path='/'
+                component={Dashboard}
+              />
+            <Route exact path='/Dashboard' component={Cards} />
               <Route
                 path='/LogIn'
                 render={(props) => <LogIn {...props} updateUser={this.updateUser} />}
@@ -98,9 +103,9 @@ class App extends Component {
                 path='/SignUp'
                 render={(props) => <SignUp {...props} />}
               />
-              {/* <Route exact path='/Dashboard' component={Dashboard} /> */}
-                {/* <Route exact path='/Form' component={Form} />  */}
-              <SecretRoute
+              <Route exact path='/Dashboard' component={Dashboard} />
+                <Route exact path='/Form' component={Form} /> 
+              {/* <SecretRoute
                 isAuthenticated={this.state.loggedIn}
                 exact path="/Dashboard"
                 component={Dashboard} 
@@ -109,11 +114,10 @@ class App extends Component {
                 isAuthenticated={this.state.loggedIn}
                 exact path="/Form"
                 component={Form} 
-                />
+                /> */}
 
             </Switch>
           </main>
-          <Cards />
           <Footer />
         </div>
       </Router>

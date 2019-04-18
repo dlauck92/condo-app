@@ -10,13 +10,14 @@ const Card = props => {
             <div className="card-body text-dark">
             <h4 className="card-title">{props.title}</h4>
             <p className="card-text text-secondary">
-                Click "Submit" for more information!
+            <div>
+                <a className="btn btn-outline-success">Ticket System</a>
+            </div>
             </p>
-            <a href="Form" className="btn btn-outline-success">Submit</a>
+            {/* <a href="Form" className="btn btn-outline-success">Go Anywhere</a> */}
             </div>
         </div>
     );
 }
 
 export default Card;
-

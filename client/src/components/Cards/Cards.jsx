@@ -11,15 +11,21 @@ class Cards extends Component {
         return (
             <div className="container-fluid d-flex justify-content-center">
                 <div className="row">
+                <a href="Form">
                     <div className="col-md-4">
-                        <Card imgsrc={img1} title="Submit a Work Order"/>
+                        <Card imgsrc={img1} title="Problems" />
                     </div> 
+                </a>
+                <a href="Contact">
                     <div className="col-md-4">
                         <Card imgsrc={img2} title="Contact Management"/>
                     </div>
+                </a>
+                <a href="TicketList">
                     <div className="col-md-4">
-                        <Card imgsrc={img3} title="Just in Case"/>
+                        <Card imgsrc={img3} title="See Tickets"/>
                     </div>
+                </a>
                 </div>
 
             </div>
