@@ -1,8 +1,9 @@
 import React from 'react';
 import './card-style.css';
+import { Link } from 'react-router-dom';
 
 const Card = props => {
-    return(
+    return (
         <div className="card text-center shadow">
             <div className="overflow">
                 <img src={props.imgsrc} alt="Img1" className="card-img-top"/>
@@ -12,11 +13,10 @@ const Card = props => {
             <p className="card-text text-secondary">
                 Click "Submit" for more information!
             </p>
-            <a href="Form" className="btn btn-outline-success">Submit</a>
+            <Link to="Form" className="btn btn-outline-success">Submit</Link>
             </div>
         </div>
     );
 }
 
 export default Card;
-

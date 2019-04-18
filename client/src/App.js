@@ -91,6 +91,14 @@ class App extends Component {
           <main style={{ marginTop: '64px' }}>
             <Switch>
               <Route
+                exact path='/'
+                component={Dashboard}
+              />
+              <Route
+               exact path='/Dashboard' 
+               component={Cards} />
+
+              <Route
                 path='/LogIn'
                 render={(props) => <LogIn {...props} updateUser={this.updateUser} />}
               />
@@ -110,10 +118,9 @@ class App extends Component {
                 exact path="/Form"
                 component={Form} 
                 />
-
             </Switch>
           </main>
-          <Cards />
+          {/* <Cards /> */}
           <Footer />
         </div>
       </Router>
