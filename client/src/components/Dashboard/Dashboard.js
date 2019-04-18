@@ -1,9 +1,10 @@
 import React from 'react';
 import './Dashboard.css';
+import Cards from './components/Cards/Cards';
 
 const Dashboard = props => (
   <div>
-      <p>IM YOUR DASHBOARD</p>
+    <Cards />
   </div>  
 );
 
