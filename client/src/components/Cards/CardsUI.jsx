@@ -1,9 +1,10 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import './card-style.css';
+import { Link } from 'react-router-dom';
 
 const Card = props => {
-    return(
+    return (
         <div className="card text-center shadow">
             <div className="overflow">
                 <img src={props.imgsrc} alt="Img1" className="card-img-top"/>
@@ -16,7 +17,7 @@ const Card = props => {
                 {/* <a className="btn btn-outline-success">Ticket System</a> */}
             </div>
             </p>
-            {/* <Link to="Form" className="btn btn-outline-success">Go Anywhere</Link> */}
+              {/* <Link to="Form" className="btn btn-outline-success">Go Anywhere</Link> */}
             </div>
         </div>
     );
