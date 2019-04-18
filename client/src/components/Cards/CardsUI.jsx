@@ -1,4 +1,5 @@
 import React from 'react';
+// import { Link } from 'react-router-dom';
 import './card-style.css';
 import { Link } from 'react-router-dom';
 
@@ -10,10 +11,13 @@ const Card = props => {
             </div>
             <div className="card-body text-dark">
             <h4 className="card-title">{props.title}</h4>
-            <p className="card-text text-secondary">
-                Click "Submit" for more information!
+            <p className="card-text text-secondary"> 
+            Click  Submit for more information
+            <div>
+                {/* <a className="btn btn-outline-success">Ticket System</a> */}
+            </div>
             </p>
-            <Link to="Form" className="btn btn-outline-success">Submit</Link>
+              {/* <Link to="Form" className="btn btn-outline-success">Go Anywhere</Link> */}
             </div>
         </div>
     );

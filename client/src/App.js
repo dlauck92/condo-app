@@ -8,7 +8,7 @@ import Form from './components/Form/Form';
 import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
-import SecretRoute from './components/SecretRoute/SecretRoute';
+// import SecretRoute from './components/SecretRoute/SecretRoute';
 import Cards from './components/Cards/Cards';
 import axios from 'axios'
 
@@ -32,7 +32,7 @@ class App extends Component {
     // redirect home
     this.setState({
       redirectTo: '/LogIn'
-  });
+    });
   }
 
   updateUser(userObject) {
@@ -114,7 +114,7 @@ class App extends Component {
                   exact path='/Form' 
                    component={Form} 
                 />
-              <SecretRoute
+              {/* <SecretRoute
                 isAuthenticated={this.state.loggedIn}
                 exact path="/Dashboard"
                 component={Dashboard} 
@@ -123,14 +123,13 @@ class App extends Component {
                 isAuthenticated={this.state.loggedIn}
                 exact path="/Form"
                 component={Form} 
-                />
+               /> */}
             </Switch>
           </main>
           <Footer />
         </div>
       </Router>
     );
-
   }
 }
 
