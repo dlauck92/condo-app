@@ -126,7 +126,6 @@ class App extends Component {
                 />
             </Switch>
           </main>
-          {/* <Cards /> */}
           <Footer />
         </div>
       </Router>
