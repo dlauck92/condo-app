@@ -3,9 +3,8 @@ import './Footer.css';
 
 const footer = props => (
     <div className="footer">
-        My Footer
+        <p>© 2019 Chap</p>
     </div>
-
 );
 
 export default footer;
