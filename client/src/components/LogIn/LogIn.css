@@ -2,28 +2,32 @@
     width: 100px;
 }
 
+/* body{
+    background-image: url("https://www.appromoters.com/wp-content/uploads/2017/04/background-appromoters-advertisers-1.png");
+} */
+
 form {
     width: 450px;
     min-height: 300px;
     height: auto;
     border-radius: 5px;
     margin: 7% auto;
-    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    box-shadow: 0 9px 50px hsla(281, 85%, 21%, 0.31);
     padding: 2%;
-    background-color: rgb(253, 200, 251);
+    background-color: rgb(#13246b);
+    /* background: transparent; */
 }
+
 
 form .con {
     display: -webkit-flex;
     display: block;
-  
     -webkit-justify-content: space-around;
     justify-content: space-around;
-  
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     width: 60%;
-  
+
     margin: auto;
 }
 

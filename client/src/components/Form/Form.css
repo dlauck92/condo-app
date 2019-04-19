@@ -2,7 +2,7 @@ input{
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
-    color: #fff;
+    color: rgb(19, 6, 6);
     margin-bottom: 30px;
     border: none;
     border: 1px solid;
@@ -13,3 +13,9 @@ input{
      box-shadow: 0 15px 25px rgba(206, 163, 207, 0.5);
      display: flex;
  }
+
+ .Submit {
+     background-color: rgb(70, 60, 82);
+     font-weight: bold;
+ }
+

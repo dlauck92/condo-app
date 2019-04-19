@@ -43,17 +43,23 @@ class Form extends React.Component {
                 <br />
                 <input className='ticketBody' placeholder='Ticket Body' value={this.state.ticketBody} onChange={e => this.setState({ ticketBody: e.target.value })} />
                 <br />
+            <div className="Submit">
                 <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.submitOrder() }} />
+            </div>
                 <br />
                 <p>Search Open Work Orders</p>
                 <input className='unitNumber' placeholder='Unit Number' value={this.state.unitNum} onChange={e => this.setState({ unitNum: e.target.value })} />
                 <br />
+            <div className="Submit">
                 <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findOpenOrder() }} />
+            </div>
                 <br />
                 <p>Search Closed Work Orders</p>
                 <input className='unitNumber' placeholder='Unit Number' value={this.state.unitNum} onChange={e => this.setState({ unitNum: e.target.value })} />
                 <br />
+            <div className="Submit">
                 <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findClosedOrder() }} />
+            </div>
             </form>
         );
     }
