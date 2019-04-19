@@ -10,6 +10,7 @@ import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
 // import SecretRoute from './components/SecretRoute/SecretRoute';
 import Cards from './components/Cards/Cards';
+import AboutCards from './components/AboutUs/AboutUs';
 import axios from 'axios'
 
 
@@ -97,6 +98,10 @@ class App extends Component {
               <Route
                exact path='/Dashboard' 
                component={Cards} 
+               />
+              <Route
+               exact path='/About' 
+               component={AboutCards} 
                />
               <Route
                 path='/LogIn'
