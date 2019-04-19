@@ -14,8 +14,22 @@ var passport = require('./passport');
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+
+if(process.env.NODE_ENV === 'production'){
+  //set static folder
+  app.use(express.static('client/build'));
+}
+
+app.get('*',(req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
 app.use(morgan('dev')); //log every request to the console
+
+
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+// app.use(express.static("public"));
+// app.use(morgan('dev')); //log every request to the console
 
 //for bodyParsar
 app.use(bodyParser.urlencoded({extended: true}));

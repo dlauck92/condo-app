@@ -107,19 +107,19 @@ class App extends Component {
                 render={(props) => <SignUp {...props} />}
               />
                <Route 
-                  exact path='/Dashboard'  
-                  component={Dashboard} 
-                />
+                exact path='/Dashboard'  
+                component={Dashboard} 
+              />
                <Route 
-                  exact path='/Form' 
-                   component={Form} 
-                />
+                exact path='/Form' 
+                component={Form} 
+              />
               {/* <SecretRoute
                 isAuthenticated={this.state.loggedIn}
                 exact path="/Dashboard"
                 component={Dashboard} 
-                />
-              <SecretRoute
+                /> */}
+              {/* <SecretRoute
                 isAuthenticated={this.state.loggedIn}
                 exact path="/Form"
                 component={Form} 
