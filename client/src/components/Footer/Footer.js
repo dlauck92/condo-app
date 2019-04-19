@@ -3,9 +3,8 @@ import './Footer.css';
 
 const footer = props => (
     <div className="footer">
-        My Footer
+        <p>© 2019 Outdoor Gear Bank</p>
     </div>
-
 );
 
 export default footer;
