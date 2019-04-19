@@ -3,11 +3,12 @@
 -- Creates the "chap_db" database --
 -- CREATE DATABASE chap_db;
 
---DAVID'S DB NAME --
+-- DAVID'S DB NAME --
 -- USE condoApp_db;
 
 -- DREW'S DB NAME --
 -- USE chap_db;
+
 
 -- Values for testing purposes
 -- INSERT INTO Users (name, username, about, email, password, last_login, status, createdAt, updatedAt)
@@ -24,6 +25,3 @@
 
 -- INSERT INTO Announcements (announcement_title, announcement_body,createdAt, updatedAt)
 -- VALUES ('Notice To All Residents','Fertilizer will be applied to the lawn on 5-10-19','2019-02-11 12:11:22.111','2019-02-11 12:11:22.111');
-
-
- 
