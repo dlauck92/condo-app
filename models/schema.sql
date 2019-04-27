@@ -22,5 +22,5 @@
 -- VALUES ('Work order 1','door broke ',230,'0','2019-02-11 12:11:22.111','2019-02-11 12:11:22.111',1);
 
 
-I-- NSERT INTO Announcements (announcement_title, announcement_body,createdAt, updatedAt)
+-- NSERT INTO Announcements (announcement_title, announcement_body,createdAt, updatedAt)
 --  VALUES ('Notice To All Reside

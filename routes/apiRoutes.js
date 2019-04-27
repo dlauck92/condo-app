@@ -1,11 +1,12 @@
 var db = require("../models");
 
-module.exports = function (app, ) {
+module.exports = function (app) {
 
 
   //create a new work order 
-  app.post("/CreateWorkOrder/:id", function (req, res) {
+  app.post("/CreateWorkOrder", function (req, res) {
     db.WorkOrder.create({
+     
       ticket_title: req.body.ticket_title,
       ticket_body: req.body.ticket_body,
       unit_num: req.body.unit_num,
@@ -56,20 +57,34 @@ module.exports = function (app, ) {
       }).catch(err => res.send(err)
       );
   });
+  // find all open work orders by unit number
+  app.get("/AllOpenWorkOrders", function (req, res) {
+
+    db.WorkOrder.findAll({}
+      ).then(OpenWorkOrder => {
+        res.json(OpenWorkOrder);
+        console.log("All Open Work Orders", OpenWorkOrder);
+      }).catch(err => res.send(err)
+      );
+  });
 
   // find all open work orders by unit number
   app.get("/OpenWorkOrder/:id", function (req, res) {
 
     db.WorkOrder.findAll({
-      ticket_title: req.body.ticket_title,
-      ticket_body: req.body.ticket_body,
-      unit_num: req.body.unit_num,
-      complete: req.body.complete
-    }, {
+      // ticket_title: req.body.ticket_title,
+      // ticket_body: req.body.ticket_body,
+      // unit_num: req.body.unit_num,
+      // complete: req.body.complete
+    
         where: {
           id: req.body.id,
           complete: false
-        }
+        },
+        order:[
+          ["createdAt", "DESC"]
+        ],
+        include: [db.User]
       }).then(OpenWorkOrder => {
         res.json(OpenWorkOrder);
         console.log("Open Work Orders", OpenWorkOrder);
@@ -106,7 +121,7 @@ module.exports = function (app, ) {
       
     }).then(newUser => {
       res.json(newUser);
-      console.log("apiRoutes sends logged in", newUser);
+      // console.log("apiRoutes sends logged in", newUser);
     }).catch(err => res.send(err)
     );
   });
