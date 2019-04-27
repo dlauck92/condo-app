@@ -10,7 +10,7 @@ var morgan = require('morgan');
 var db = require("./models");
 // var passport = require('./config/passport/passport.js');
 var passport = require('./passport');
-
+var path = require("path");
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

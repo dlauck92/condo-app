@@ -35,7 +35,8 @@ module.exports = (sequelize, DataTypes) => {
                     ],
                     msg: "Username must be at least 6 characters in length"
                 }
-            }
+            },
+            unique: true
         },
         about: {
             type: DataTypes.STRING,
@@ -45,7 +46,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             validate: {
                 isEmail: true
-            }
+            },
+            unique: true
 
         },
         password: {
@@ -65,31 +67,19 @@ module.exports = (sequelize, DataTypes) => {
         admin: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
+        },
+        role: {
+            type: DataTypes.ENUM('user', 'admin', 'disabled'),
+            defaultValue: 'user'
         }
          
     });
-    // userSchema.methods = {
-    //     checkPassword: function (inputPass) {
-    //         return bcrypt.compareSync(inputPass, this.password);
-    //     },
-    //     hashPassword: userPassword => {
-    //         return bcrypt.hashSync(userPassword, 10);
-    //     }
-    // }
-    
-    // userSchema.pre('save', function (next) {
-    //     if (!this.password) {
-    //         next();
-    //     } else {
-    //         this.password = this.hashPassword(this.password);
-    //         next();
-    //     }
-    // });
-    // User.associate = function (models) {
-    //     User.hasMany(models.Post,models.WorkOrder, {  
-    //         onDelete: "cascade"
-    //     });
-    // };
+    // 
+    User.associate = function (models) {
+        User.hasMany(models.WorkOrder, {  
+            onDelete: "cascade"
+        });
+    };
 
 
 

@@ -4,7 +4,7 @@ module.exports = function (app, ) {
 
 
   //create a new work order 
-  app.post("/CreateWorkOrder", function (req, res) {
+  app.post("/CreateWorkOrder/:id", function (req, res) {
     db.WorkOrder.create({
       ticket_title: req.body.ticket_title,
       ticket_body: req.body.ticket_body,
@@ -38,7 +38,7 @@ module.exports = function (app, ) {
   });
 
   //find all closed workers by unit number
-  app.get("/ClosedWorkOrder/:unit_num", function (req, res) {
+  app.get("/ClosedWorkOrder/:id", function (req, res) {
     db.WorkOrder.findAll({
 
       ticket_title: req.body.ticket_title,
@@ -47,7 +47,7 @@ module.exports = function (app, ) {
       complete: req.body.complete
     }, {
         where: {
-          unit_num: req.body.unit_num,
+          id: req.body.id,
           complete: true
         }
       }).then(ClosedWorkOrder => {
@@ -58,7 +58,7 @@ module.exports = function (app, ) {
   });
 
   // find all open work orders by unit number
-  app.get("/OpenWorkOrder/:unit_num", function (req, res) {
+  app.get("/OpenWorkOrder/:id", function (req, res) {
 
     db.WorkOrder.findAll({
       ticket_title: req.body.ticket_title,
@@ -67,7 +67,7 @@ module.exports = function (app, ) {
       complete: req.body.complete
     }, {
         where: {
-          unit_num: req.body.unit_num,
+          id: req.body.id,
           complete: false
         }
       }).then(OpenWorkOrder => {

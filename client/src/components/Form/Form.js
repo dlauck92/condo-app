@@ -1,38 +1,41 @@
 import React from 'react';
 import './Form.css';
-// import api from '../../utils/api';
+import api from '../../utils/api';
+// import axios from 'axios';
 
-import axios from 'axios';
 class Form extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            ticketTitle: [],
-            unitNum: [],
-            ticketBody: []
+            ticketTitle: '',
+            unitNum: '',
+            ticketBody: '',
+            id: '',
         }
-
     }
+
     // use for getting Closed worker tickets
     findClosedOrder() {
-        return axios.get("/ClosedWorkOrder/" + this.state.unitNum);
-    }
-    // use for getting Open worker tickets
-    findOpenOrder() {
-        return axios.get("/OpenWorkOrder/" + this.state.unitNum);
-    }
+        api.getClosedOrders(this.props.id);
+    };
 
-    //create new work order ticket
+    // use for getting Open worker tickets
+    findOpenOrder(){
+        api.getOpenOrders(this.props.id).then(res => console.log((res)))
+    };
+
+
+    //Submit a work order ticket
     submitOrder() {
-        return axios.post('/CreateWorkOrder', {
+        api.saveWorkOrder(this.props.id)
+            .then({
             ticket_title: this.state.ticketTitle,
             unit_num: this.state.unitNum,
-            ticket_body: this.state.ticketBody
-        }).then(res => {
+            ticket_body: this.state.ticketBody,
             
-
         });
     }
+
     render() {
         return (
             <form>
@@ -43,23 +46,23 @@ class Form extends React.Component {
                 <br />
                 <input className='ticketBody' placeholder='Ticket Body' value={this.state.ticketBody} onChange={e => this.setState({ ticketBody: e.target.value })} />
                 <br />
-            <div className="Submit">
-                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.submitOrder() }} />
-            </div>
+                <div className="Submit">
+                    <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.submitOrder() }} />
+                </div>
                 <br />
                 <p>Search Open Work Orders</p>
-                <input className='unitNumber' placeholder='Unit Number' value={this.state.unitNum} onChange={e => this.setState({ unitNum: e.target.value })} />
+                {/* <input className='unitNumber' placeholder='Unit Number' value={this.state.unit_num} onChange={e => this.setState({ unit_num: e.target.value })} /> */}
                 <br />
-            <div className="Submit">
-                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findOpenOrder() }} />
-            </div>
+                <div className="Submit">
+                    <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findOpenOrder() }} />
+                </div>
                 <br />
                 <p>Search Closed Work Orders</p>
-                <input className='unitNumber' placeholder='Unit Number' value={this.state.unitNum} onChange={e => this.setState({ unitNum: e.target.value })} />
+                {/* <input className='unitNumber' placeholder='Unit Number' value={this.state.unit_num} onChange={e => this.setState({ unit_num: e.target.value })} /> */}
                 <br />
-            <div className="Submit">
-                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findClosedOrder() }} />
-            </div>
+                <div className="Submit">
+                    <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findClosedOrder() }} />
+                </div>
             </form>
         );
     }
