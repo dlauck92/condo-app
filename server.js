@@ -8,9 +8,9 @@ var session  = require('express-session');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require("./models");
-// var passport = require('./config/passport/passport.js');
 var passport = require('./passport');
 var path = require("path");
+
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -27,11 +27,11 @@ app.use(bodyParser.json());
 
 // required for passport
 app.use(session({
+  // session secret
 	secret: 'condoapp',
 	resave: false,
 	saveUninitialized: false
- } )); // session secret
- 
+ } ));
  
 //  Passport
 app.use(passport.initialize());
@@ -39,6 +39,7 @@ app.use(passport.session());
 app.get('/', function (req, res) {
   res.send('hello world')
 })
+
 // Routes
 app.use(routes);
 require("./routes/apiRoutes.js")(app);
