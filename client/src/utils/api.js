@@ -13,6 +13,10 @@ export default {
   //   return axios.post("/CreateWorkOrder/" + id);
   // },
   //Finds all open work orders for all Users
+  getAllClosedOrders: function (id) {
+    return axios.get("/AllClosedWorkOrders/" + id)
+  },
+  //Finds all open work orders for all Users
   getAllOpenOrders: function (id) {
     return axios.get("/AllOpenWorkOrders/" + id)
   },

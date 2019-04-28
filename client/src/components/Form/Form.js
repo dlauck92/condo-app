@@ -18,6 +18,11 @@ class Form extends React.Component {
         api.getAllOpenOrders(this.props.id)
         .then(res => console.log('All Open Orders role Admin', res))
     };
+    // use for getting Closed worker tickets
+    findAllClosedOrders() {
+        api.getAllClosedOrders(this.props.id)
+        .then(res => console.log('All Closed Orders role Admin', res))
+    };
 
     // use for getting Closed worker tickets
     findClosedOrder() {
@@ -84,6 +89,15 @@ class Form extends React.Component {
 
                 <div className="Submit">
                     <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findAllOpenOrders() }} />
+                </div>
+                <br />
+                <br />
+                
+                <p>Search All Owners Closed Work Orders</p>
+                {/* <input className='unitNumber' placeholder='Unit Number' value={this.state.unit_num} onChange={e => this.setState({ unit_num: e.target.value })} /> */}
+
+                <div className="Submit">
+                    <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findAllClosedOrders() }} />
                 </div>
                 <br />
             </form>
