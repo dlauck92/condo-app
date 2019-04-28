@@ -108,6 +108,7 @@ module.exports = function (app) {
       }).catch(err => res.send(err)
       );
     } else {
+      //add alert*****
       results = console.log('You do not have permission to view these files. Contact your administrator to change your role.');
       res.redirect("/Form");
     };

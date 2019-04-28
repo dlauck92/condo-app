@@ -36,9 +36,7 @@ app.use(session({
 //  Passport
 app.use(passport.initialize());
 app.use(passport.session()); 
-app.get('/', function (req, res) {
-  res.send('hello world')
-})
+
 // Routes
 app.use(routes);
 require("./routes/apiRoutes.js")(app);
