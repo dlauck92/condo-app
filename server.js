@@ -48,7 +48,7 @@ app.get('*',(req, res) => {
   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
 
-var syncOptions = { force: true };
+var syncOptions = { force: false };
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
