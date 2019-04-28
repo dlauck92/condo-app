@@ -1,24 +1,34 @@
-// import axios from "axios";
+import axios from "axios";
 
-// export default {
-  // Gets all books
-//   getBooks: function() {
-//     return axios.get("/api/books");
-//   },
-//   // Gets the book with the given id
-//   getBook: function(id) {
-//     return axios.get("/api/books/" + id);
-//   },
-//   // Deletes the book with the given id
-//   deleteBook: function(id) {
-//     return axios.delete("/api/books/" + id);
-//   },
-  // Saves a work order ticket to the database
-//   saveWorkOrder: function(newWorkOrder) {
-//     return axios.post("/CreateWorkOrder", newWorkOrder);
-    
-//   }
-// };
-// getNanabyID: function(unit_num) {
-//   return axios.get("OpenWorkOrder/" + unit_num);
-// },
+export default {
+
+  // Deletes the Work order with the given id
+  deleteWorkOrder: function (id) {
+    return axios.delete("/DeleteWorkOrder/" + id);
+  },
+
+  // Saves a work order ticket by User id
+  // saveWorkOrder: function (id) {
+  //   console.log('Function works: this.props.id:' + id)
+  //   return axios.post("/CreateWorkOrder/" + id);
+  // },
+  //Finds all open work orders for all Users
+  getAllClosedOrders: function (id) {
+    return axios.get("/AllClosedWorkOrders/" + id)
+  },
+  //Finds all open work orders for all Users
+  getAllOpenOrders: function (id) {
+    return axios.get("/AllOpenWorkOrders/" + id)
+  },
+  // Finds all open work orders by User id
+  getOpenOrders: function (id) {
+    // console.log('Function works: this.props.id:' + id)
+    return axios.get("/OpenWorkOrder/" + id) 
+  },
+
+  //Finds all closed work orders by User id
+  getClosedOrders: function (id) {
+    return axios.get("/ClosedWorkOrder/" + id)
+  },
+
+};

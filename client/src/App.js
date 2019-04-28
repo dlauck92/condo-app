@@ -20,7 +20,10 @@ class App extends Component {
     this.state = {
       loggedIn: false,
       username: null,
+      id:'',
       redirectTo: '/LogIn',
+      sideDrawerOpen: false
+  
     }
 
     // this.getUser = this.getUser.bind(this);
@@ -64,9 +67,9 @@ class App extends Component {
     });
   }
 
-  state = {
-    sideDrawerOpen: false
-  };
+  // state = {
+  //   sideDrawerOpen: false
+  // };
 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
@@ -117,7 +120,11 @@ class App extends Component {
               />
                <Route 
                 exact path='/Form' 
-                component={Form} 
+                render={(props) => <Form {...props} id = {this.state.id}
+                unit_num = {this.state.unit_num}
+                ticket_title = {this.state.ticket_title}
+                ticket_body = {this.state.ticket_body}
+                 untiupdateUser={this.updateUser} />}
               />
               {/* <SecretRoute
                 isAuthenticated={this.state.loggedIn}

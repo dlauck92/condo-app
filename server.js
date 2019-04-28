@@ -10,7 +10,7 @@ var morgan = require('morgan');
 var db = require("./models");
 // var passport = require('./config/passport/passport.js');
 var passport = require('./passport');
-
+var path = require("path");
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,17 +19,7 @@ if(process.env.NODE_ENV === 'production'){
   //set static folder
   app.use(express.static('client/build'));
 }
-
-app.get('*',(req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
 app.use(morgan('dev')); //log every request to the console
-
-
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
-// app.use(express.static("public"));
-// app.use(morgan('dev')); //log every request to the console
 
 //for bodyParsar
 app.use(bodyParser.urlencoded({extended: true}));
@@ -42,14 +32,20 @@ app.use(session({
 	saveUninitialized: false
  } )); // session secret
  
- //Passport
+ 
+//  Passport
 app.use(passport.initialize());
 app.use(passport.session()); 
-
+app.get('/', function (req, res) {
+  res.send('hello world')
+})
 // Routes
 app.use(routes);
 require("./routes/apiRoutes.js")(app);
 require("./routes/user.js")
+app.get('*',(req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
 
 var syncOptions = { force: false };
 

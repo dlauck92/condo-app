@@ -7,7 +7,7 @@ class TicketList extends Component {
 
             <div className="container bg-light border">
 
-<h1> Here is a list of all Tickets!</h1>
+                <h1> Here is a list of all Tickets!</h1>
 
                 <div className="col-1-md"></div>
                 <div className="col-10-md"></div>

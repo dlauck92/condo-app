@@ -3,25 +3,25 @@ module.exports = function (sequelize, DataTypes) {
 
         ticket_title: {
             type: DataTypes.TEXT,
-            allowNull: false, 
+            allowNull: false,
         },
         ticket_body: {
             type: DataTypes.TEXT,
-            allowNull: false, 
+            allowNull: false,
         },
-    
+
         unit_num: DataTypes.BIGINT,
         complete: DataTypes.BOOLEAN
     });
 
-    // WorkOrder.associate = function (models) {
-    //     WorkOrder.belongsTo(models.User, {
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
-    //     });
-    // };
+    WorkOrder.associate = function (models) {
+        WorkOrder.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
 
     return WorkOrder;
- 
+
 };
