@@ -12,7 +12,7 @@ module.exports = function (app) {
       ticket_title: req.body.ticket_title,
       ticket_body: req.body.ticket_body,
       unit_num: req.body.unit_num,
-      complete: req.body.completed
+      complete: req.body.complete
     }).then(newWorkOrder => {
       res.json(newWorkOrder);
       console.log("new work order", newWorkOrder);
