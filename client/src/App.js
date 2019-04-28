@@ -120,7 +120,11 @@ class App extends Component {
               />
                <Route 
                 exact path='/Form' 
-                render={(props) => <Form {...props} id = {this.state.id} updateUser={this.updateUser} />}
+                render={(props) => <Form {...props} id = {this.state.id}
+                unit_num = {this.state.unit_num}
+                ticket_title = {this.state.ticket_title}
+                ticket_body = {this.state.ticket_body}
+                 untiupdateUser={this.updateUser} />}
               />
               {/* <SecretRoute
                 isAuthenticated={this.state.loggedIn}
