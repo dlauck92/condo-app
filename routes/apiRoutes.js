@@ -216,6 +216,8 @@ module.exports = function (app) {
     db.User.create({
       username: req.body.username,
       password: req.body.password,
+      name: req.body.name,
+      email: req.body.email
 
     }).then(newUser => {
       res.json(newUser);

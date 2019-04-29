@@ -10,6 +10,8 @@ class SignUp extends Component {
         this.state = {
             username: '',
             password: '',
+            name: '',
+            email: '',
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,8 +28,11 @@ class SignUp extends Component {
         event.preventDefault();
         //request to server here (add new username/password)
         axios.post('/user', {
+            name: this.state.name,
+            email: this.state.email,
             username: this.state.username,
             password: this.state.password,
+            
         }).then(response => {
             console.log("signeup" + response);
             if (!response.data.error) {
@@ -61,6 +66,30 @@ class SignUp extends Component {
                         <i className="fas fa-lock"></i>
                         <div className="SignupForm" onKeyPress={this.onKeyPress}>
                             <h1 className="register-H3">Register to Chap!</h1>
+                            <label className="sr-only" htmlFor="name">Name</label>
+                            <input
+                                className="form-control"
+                                placeholder="Name"
+                                type="text"
+                                name="name"
+                                value={this.state.name}
+                                onChange={this.handleChange}
+                                required
+                                autoFocus
+                            />
+                            <br />
+                            <label className="sr-only" htmlFor="email">Email</label>
+                            <input
+                                className="form-control"
+                                placeholder="Email"
+                                type="text"
+                                name="email"
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                                required
+                                autoFocus
+                            />
+                            <br />
                             <label className="sr-only" htmlFor="username">Username</label>
                             <input
                                 className="form-control"
