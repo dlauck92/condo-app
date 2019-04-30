@@ -107,21 +107,6 @@ class Form extends React.Component {
             <br />
         </li>
         );
-        // const allOrders = this.state.allOrders;
-        // console.log(allOrders);
-        //  const allListItems = this.state.allOrders.map((d) => <li key={d.id}>
-        //     <h5>Unit Num: {d.unit_num}</h5>
-
-        //     <h5>Ticket Title:</h5>
-        //     {d.WorkOrder.ticket_title}
-        //     <br />
-        //     <br />
-        //     <h5>Ticket Body:</h5>
-        //     {d.WorkOrder.ticket_body}
-        //     <br />
-        //     <br />
-        //     <br />
-        // </li>);
 
         return (
             <Container fluid>
@@ -131,40 +116,51 @@ class Form extends React.Component {
                             <h4>Create or Search Work Orders </h4>
                         </Jumbotron>
                         <form>
-                            <p>Create a Work Order</p>
+                            <p className="create-order-title">Create a Work Order</p>
+                            <hr/>
                             <input className='unitNumber' placeholder='Unit Number' value={this.state.unitNum} onChange={e => this.setState({ unitNum: e.target.value })} />
                             <br />
                             <input className='ticketTitle' placeholder='Ticket Title' value={this.state.ticketTitle} onChange={e => this.setState({ ticketTitle: e.target.value })} />
                             <br />
                             <input className='ticketBody' placeholder='Ticket Body' value={this.state.ticketBody} onChange={e => this.setState({ ticketBody: e.target.value })} />
                             <br />
-                            <div className="Submit">
-                                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.submitOrder() }} />
+                            <div className="submit-btn">
+                                <button className="button" type="button" value="Submit" onClick={(e) => { e.preventDefault(); this.submitOrder() }}>Submit</button>
                             </div>
                             <br />
                             <br />
-                            <p>Search Open Work Orders</p>
+                                  
+                            <p className="search-open-title">Search Open Work Orders</p>
+                            {/* <input className='unitNumber' placeholder='Unit Number' value={this.state.unit_num} onChange={e => this.setState({ unit_num: e.target.value })} /> */}
+
+                            <div className="submit-btn">
+                                <button className="button" type="button" value="Submit" onClick={(e) => { e.preventDefault(); this.findOpenOrder() }}>Submit</button>
+                            </div>
+                            <br />
+                            <br />
+                                  
+                            <p className="search-closed-title">Search Closed Work Orders</p>
+                            {/* <input className='unitNumber' placeholder='Unit Number' value={this.state.unit_num} onChange={e => this.setState({ unit_num: e.target.value })} /> */}
+
+                            <div className="submit-btn">
+                                <button className="button" type="button" value="Submit" onClick={(e) => { e.preventDefault(); this.findClosedOrder() }}>Submit</button>
+                            </div>
+                            <br />
+                            <br />
+                            <p className="search-all-open-title">Search All Owners Open Work Orders</p>
+                            {/* <input className='unitNumber' placeholder='Unit Number' value={this.state.unit_num} onChange={e => this.setState({ unit_num: e.target.value })} /> */}
 
                             <div className="Submit">
-                                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findOpenOrder() }} />
+                                <button className="button" type="button" value="Submit" onClick={(e) => { e.preventDefault(); this.findAllOpenOrders() }}>Submit</button>
                             </div>
                             <br />
                             <br />
-                            <p>Search Closed Work Orders</p>
+
+                            <p className="search-all-closed-title">Search All Owners Closed Work Orders</p>
+                            {/* <input className='unitNumber' placeholder='Unit Number' value={this.state.unit_num} onChange={e => this.setState({ unit_num: e.target.value })} /> */}
+
                             <div className="Submit">
-                                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findClosedOrder() }} />
-                            </div>
-                            <br />
-                            <br />
-                            <p>Search All Owners Open Work Orders</p>
-                            <div className="Submit">
-                                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findAllOpenOrders() }} />
-                            </div>
-                            <br />
-                            <br />
-                            <p>Search All Owners Closed Work Orders</p>
-                            <div className="Submit">
-                                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findAllClosedOrders() }} />
+                                <button className="button" type="button" value="Submit" onClick={(e) => { e.preventDefault(); this.findAllClosedOrders() }}>Submit</button>
                             </div>
                             <br />
                         </form>
@@ -188,7 +184,6 @@ class Form extends React.Component {
                             <div className="Submit">
                                 <input type="submit" value="Clear List" onClick={(e) => { e.preventDefault(); this.clearList() }}/>
                             </div>
-                            
                     </Col>
                 </Row>
             </Container>

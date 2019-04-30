@@ -120,7 +120,6 @@ input:focus {
 .submits {
     width: 48%;
     display: inline-block;
-    float: left;
     margin-left: 2%;
 }
 
