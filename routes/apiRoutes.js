@@ -63,112 +63,118 @@ module.exports = function (app) {
     );
   });
   // find all open work orders by id for administrator role only
-  app.get("/AllOpenWorkOrders/:id", async(req, res)=> {
-    
+  // 
+  
+  //find all Open Work orders where users are  Admin role only
+  app.get("/AllOpenWorkOrders/:id" ,async(req, res)=> {
     const User = await db.User.findOne({ where: { id: req.params.id, role: 'admin' } });
-    console.log('line 67',User);
+    console.log('apiRoutes.js line 71',User);
     if (User !== null) {
-      db.User.findAll({
-        include: [
-          {
-            model: db.WorkOrder,
-            where: {
-              complete: false,
-            },
-          }
-        ],
+      db.WorkOrder.findAll({
+        id: req.body.id,
+        ticket_title: req.body.ticket_title,
+        ticket_body: req.body.ticket_body,
+        unit_num: req.body.unit_num,
+        complete: req.body.complete,
+        where: {
+          complete: false
+        },
         order: [
           ["createdAt", "DESC"]
-        ],
-      }).then(Users => {
-        const resObj = Users.map(User => {
-          return Object.assign(
-            {},
-            {
-              name: User.name,
-              about: User.about,
-              role: User.role,
-              email: User.email,
-              WorkOrder: User.WorkOrders.map(WorkOrder => {
-                return Object.assign(
-                  {},
-                  {
-                    ticket_id: WorkOrder.id,
-                    unit_num: WorkOrder.unit_num,
-                    ticket_title: WorkOrder.ticket_title,
-                    ticket_body: WorkOrder.ticket_body,
-                    createdAt: WorkOrder.createdAt,
-                    updatedAt: WorkOrder.updatedAt
-                  })
-              })
-            })
-        });
-        res.json(resObj);
-        // console.log("All Open Work Orders", resObj);
+        ]
+      }).then(OpenWorkOrder => {
+        res.json(OpenWorkOrder);
+        console.log("All open  work orders", OpenWorkOrder);
       }).catch(err => res.send(err)
       );
     } else {
-      //add alert*****
-      results = console.log('You do not have permission to view these files. Contact your administrator to change your role.');
-      res.redirect("/Form");
+      res.status(500).send({ error: console.log('You do not have permission to view these files. Contact your administrator to change your role.' )}).end();
     };
   });
 
   // find all Closed/Completed work orders by Id for Administrator role only
+  // app.get("/AllClosedWorkOrders/:id" ,async(req, res)=> {
+  //   const User = await db.User.findOne({ where: { id: req.params.id, role: 'admin' } });
+  //   console.log('line 120',User);
+  //   if (User !== null) {
+  //     db.User.findAll({
+  //       include: [
+  //         {
+  //           model: db.WorkOrder,
+  //           where: {
+  //             complete: true,
+  //           },
+  //         }
+  //       ],
+  //       order: [
+  //         ["createdAt", "DESC"]
+  //       ],
+  //     }).then(Users => {
+  //       const resObj = Users.map(User => {
+  //         return Object.assign(
+  //           {},
+  //           {
+  //             id: User.id,
+  //             name: User.name,
+  //             about: User.about,
+  //             role: User.role,
+
+  //             email: User.email,
+  //             WorkOrder: User.WorkOrders.map(WorkOrder => {
+  //               return Object.assign(
+  //                 {},
+  //                 {
+  //                   id: WorkOrder.id,
+  //                   unit_num: WorkOrder.unit_num,
+  //                   ticket_title: WorkOrder.ticket_title,
+  //                   ticket_body: WorkOrder.ticket_body,
+  //                   createdAt: WorkOrder.createdAt,
+  //                   updatedAt: WorkOrder.updatedAt
+  //                 })
+  //             })
+  //           })
+  //       });
+  //       res.json(resObj);
+  //       console.log("All Closed Work Orders", resObj);
+  //     }).catch(err => res.send(err)
+  //     );
+  //   } else {
+  //     results = console.log('You do not have permission to view these files. Contact your administrator to change your role.');
+  //     res.redirect("/Form");
+  //   };
+  // });
+
+  // find all Closed/Completed work orders by Id for Administrator role only
   app.get("/AllClosedWorkOrders/:id" ,async(req, res)=> {
-    
     const User = await db.User.findOne({ where: { id: req.params.id, role: 'admin' } });
-    console.log('line 118',User);
+    console.log('apiRoutes.js line 150',User);
     if (User !== null) {
-      db.User.findAll({
-        include: [
-          {
-            model: db.WorkOrder,
-            where: {
-              complete: true,
-            },
-          }
-        ],
+      db.WorkOrder.findAll({
+        id: req.body.id,
+        ticket_title: req.body.ticket_title,
+        ticket_body: req.body.ticket_body,
+        unit_num: req.body.unit_num,
+        complete: req.body.complete,
+        where: {
+          complete: true
+        },
         order: [
           ["createdAt", "DESC"]
-        ],
-      }).then(Users => {
-        const resObj = Users.map(User => {
-          return Object.assign(
-            {},
-            {
-              name: User.name,
-              about: User.about,
-              role: User.role,
-              email: User.email,
-              WorkOrder: User.WorkOrders.map(WorkOrder => {
-                return Object.assign(
-                  {},
-                  {
-                    ticket_id: WorkOrder.id,
-                    unit_num: WorkOrder.unit_num,
-                    ticket_title: WorkOrder.ticket_title,
-                    ticket_body: WorkOrder.ticket_body,
-                    createdAt: WorkOrder.createdAt,
-                    updatedAt: WorkOrder.updatedAt
-                  })
-              })
-            })
-        });
-        res.json(resObj);
-        // console.log("All Closed Work Orders", resObj);
+        ]
+      }).then(ClosedWorkOrder => {
+        res.json(ClosedWorkOrder);
+        console.log("All Closed work orders", ClosedWorkOrder);
       }).catch(err => res.send(err)
       );
     } else {
-      results = console.log('You do not have permission to view these files. Contact your administrator to change your role.');
-      res.redirect("/Form");
+      res.status(500).send({ error: console.log('You do not have permission to view these files. Contact your administrator to change your role.' )}).end();
     };
   });
 
   // find all open work orders by unit number
-  app.get("/OpenWorkOrder/:id", function (req, res) {
+  app.get("/OpenWorkOrder/:id", async(req, res)=> {
     UserId = req.params.id;
-    db.WorkOrder.findAll({
+      await db.WorkOrder.findAll({
 
       id: req.body.id,
       ticket_title: req.body.ticket_title,
@@ -188,6 +194,7 @@ module.exports = function (app) {
     }).catch(err => res.send(err)
     );
   });
+
   //find one work order last entered by user id
   app.get("/FindOneWorkOrder/:id", function (req, res) {
     UserId = req.params.id;
