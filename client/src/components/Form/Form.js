@@ -75,7 +75,8 @@ class Form extends React.Component {
             //                 <h1>Create and Search for Work Orders </h1>
             //             </Jumbotron>
                         <form>
-                            <p>Create a Work Order</p>
+                            <p className="create-order-title">Create a Work Order</p>
+                            <hr/>
                             <input className='unitNumber' placeholder='Unit Number' value={this.state.unitNum} onChange={e => this.setState({ unitNum: e.target.value })} />
                             <br />
                             <input className='ticketTitle' placeholder='Ticket Title' value={this.state.ticketTitle} onChange={e => this.setState({ ticketTitle: e.target.value })} />
@@ -83,41 +84,41 @@ class Form extends React.Component {
 
                             <input className='ticketBody' placeholder='Ticket Body' value={this.state.ticketBody} onChange={e => this.setState({ ticketBody: e.target.value })} />
                             <br />
-                            <div className="Submit">
-                                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.submitOrder() }} />
+                            <div className="submit-btn">
+                                <button className="button" type="button" value="Submit" onClick={(e) => { e.preventDefault(); this.submitOrder() }}>Submit</button>
                             </div>
                             <br />
                             <br />
-                            <p>Search Open Work Orders</p>
+                            <p className="search-open-title">Search Open Work Orders</p>
                             {/* <input className='unitNumber' placeholder='Unit Number' value={this.state.unit_num} onChange={e => this.setState({ unit_num: e.target.value })} /> */}
 
-                            <div className="Submit">
-                                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findOpenOrder() }} />
+                            <div className="submit-btn">
+                                <button className="button" type="button" value="Submit" onClick={(e) => { e.preventDefault(); this.findOpenOrder() }}>Submit</button>
                             </div>
                             <br />
                             <br />
-                            <p>Search Closed Work Orders</p>
+                            <p className="search-closed-title">Search Closed Work Orders</p>
                             {/* <input className='unitNumber' placeholder='Unit Number' value={this.state.unit_num} onChange={e => this.setState({ unit_num: e.target.value })} /> */}
 
-                            <div className="Submit">
-                                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findClosedOrder() }} />
+                            <div className="submit-btn">
+                                <button className="button" type="button" value="Submit" onClick={(e) => { e.preventDefault(); this.findClosedOrder() }}>Submit</button>
                             </div>
                             <br />
                             <br />
-                            <p>Search All Owners Open Work Orders</p>
+                            <p className="search-all-open-title">Search All Owners Open Work Orders</p>
                             {/* <input className='unitNumber' placeholder='Unit Number' value={this.state.unit_num} onChange={e => this.setState({ unit_num: e.target.value })} /> */}
 
                             <div className="Submit">
-                                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findAllOpenOrders() }} />
+                                <button className="button" type="button" value="Submit" onClick={(e) => { e.preventDefault(); this.findAllOpenOrders() }}>Submit</button>
                             </div>
                             <br />
                             <br />
 
-                            <p>Search All Owners Closed Work Orders</p>
+                            <p className="search-all-closed-title">Search All Owners Closed Work Orders</p>
                             {/* <input className='unitNumber' placeholder='Unit Number' value={this.state.unit_num} onChange={e => this.setState({ unit_num: e.target.value })} /> */}
 
                             <div className="Submit">
-                                <input type="submit" value="Submit" onClick={(e) => { e.preventDefault(); this.findAllClosedOrders() }} />
+                                <button className="button" type="button" value="Submit" onClick={(e) => { e.preventDefault(); this.findAllClosedOrders() }}>Submit</button>
                             </div>
                             <br />
 
