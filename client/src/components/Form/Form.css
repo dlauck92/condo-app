@@ -1,4 +1,4 @@
-input{
+input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -9,13 +9,52 @@ input{
     outline: none;
     background: transparent;
     box-sizing: border-box;
-     border-radius: 10px;
-     box-shadow: 0 15px 25px rgba(206, 163, 207, 0.5);
-     display: flex;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(206, 163, 207, 0.5);
+    display: flex;
  }
 
- .Submit {
-     background-color: rgb(70, 60, 82);
-     font-weight: bold;
+ /* .submit {
+    background-color: white;
+    font-weight: bold;
+    text-align: center;
+ } */
+
+ .closedOrder_btn {
+    text-align: center;
  }
 
+ .button {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    background-color: #521751;
+    border-radius: 10px;
+    width: 100%;
+ }
+
+ .create-order-title {
+    text-align: center;
+    font-weight: bold;
+ }
+
+ .search-open-title {
+    text-align: center;
+    font-weight: bold; 
+ }
+
+.search-closed-title {
+    text-align: center;
+    font-weight: bold; 
+ }
+
+ .search-all-open-title {
+    text-align: center;
+    font-weight: bold; 
+ }
+
+ .search-all-closed-title {
+    text-align: center;
+    font-weight: bold; 
+ }

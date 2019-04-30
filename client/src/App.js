@@ -8,7 +8,7 @@ import Form from './components/Form/Form';
 import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
-// import SecretRoute from './components/SecretRoute/SecretRoute';
+import SecretRoute from './components/SecretRoute/SecretRoute';
 import Cards from './components/Cards/Cards';
 import AboutCards from './components/AboutUs/AboutUs';
 import axios from 'axios'
@@ -21,8 +21,8 @@ class App extends Component {
       loggedIn: false,
       username: null,
       id:'',
-      redirectTo: '/LogIn',
-      sideDrawerOpen: false
+      // redirectTo: null,
+      // sideDrawerOpen: false
   
     }
 
@@ -67,9 +67,9 @@ class App extends Component {
     });
   }
 
-  // state = {
-  //   sideDrawerOpen: false
-  // };
+  state = {
+    sideDrawerOpen: false
+  };
 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
@@ -114,28 +114,29 @@ class App extends Component {
                 path='/SignUp'
                 render={(props) => <SignUp {...props} />}
               />
-               <Route 
+               {/* <Route 
                 exact path='/Dashboard'  
                 component={Dashboard} 
-              />
-               <Route 
+              /> */}
+               {/* <Route 
                 exact path='/Form' 
                 render={(props) => <Form {...props} id = {this.state.id}
                 unit_num = {this.state.unit_num}
                 ticket_title = {this.state.ticket_title}
                 ticket_body = {this.state.ticket_body}
                  untiupdateUser={this.updateUser} />}
-              />
-              {/* <SecretRoute
+              /> */}
+              <SecretRoute
                 isAuthenticated={this.state.loggedIn}
                 exact path="/Dashboard"
                 component={Dashboard} 
-                /> */}
-              {/* <SecretRoute
-                isAuthenticated={this.state.loggedIn}
-                exact path="/Form"
-                component={Form} 
-               /> */}
+                />
+              <SecretRoute
+                isAuthenticated={this.state.loggedIn} 
+                // render={(props) => <Form {...props} id = {this.state.id}
+                //  untiupdateUser={this.updateUser} />}
+                component= {(props) => <Form {...props} id = {this.state.id}/>}
+              />
             </Switch>
           </main>
           <Footer />
