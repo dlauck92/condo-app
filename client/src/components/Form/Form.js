@@ -83,7 +83,10 @@ class Form extends React.Component {
     };
     clearList() {
         this.setState({
-            orders: []
+            orders: [],
+            ticketTitle: '',
+            unitNum: '',
+            ticketBody: '',
         })
     };
 
