@@ -28,7 +28,7 @@ class About extends Component {
       <br>
       </br>
   
-        <p>
+        <p className="about-chap">
         This is a Home Owner Association Application for Managers and Board members to communicate
          effectively with your fellow residents by posting your newsletters, meeting minutes, official
           documents and forms on your association website. The web application also includes a ticket 
@@ -45,7 +45,7 @@ class About extends Component {
 
       <br>
       </br>
-        <p>
+        <p className="about-creators">
           The creators of CHAP were Case Western students that participated in the Web Development BootCamp. CHAP's development 
           team consist of four developers Drew Lauck, Enrique Sandino, David Mclaughlin, and Matthew McGee. The UI/UX developers include
           Enrique Sandino and Matthew McGee. The backend development team consisted of Drew Lauck and David Mclaughlin. Enrique 
