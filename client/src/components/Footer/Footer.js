@@ -3,8 +3,7 @@ import './Footer.css';
 
 const footer = props => (
     <div className="footer">
-        <p>© 2019 CHAP
-        Cleveland, Ohio</p>
+        <p>© 2019 Chap</p>
     </div>
 );
 
