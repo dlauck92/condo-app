@@ -10,7 +10,8 @@ import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
 import SecretRoute from './components/SecretRoute/SecretRoute';
 import Cards from './components/Cards/Cards';
-import AboutCards from './components/AboutUs/AboutUs';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
 import axios from 'axios'
 
 
@@ -104,7 +105,11 @@ class App extends Component {
                />
               <Route
                exact path='/About' 
-               component={AboutCards} 
+               component={About} 
+               />
+              <Route
+               exact path='/Contact' 
+               component={Contact} 
                />
               <Route
                 path='/LogIn'
@@ -114,18 +119,18 @@ class App extends Component {
                 path='/SignUp'
                 render={(props) => <SignUp {...props} />}
               />
-               {/* <Route 
-                exact path='/Dashboard'  
-                component={Dashboard} 
-              /> */}
-               {/* <Route 
-                exact path='/Form' 
-                render={(props) => <Form {...props} id = {this.state.id}
-                unit_num = {this.state.unit_num}
-                ticket_title = {this.state.ticket_title}
-                ticket_body = {this.state.ticket_body}
-                 untiupdateUser={this.updateUser} />}
-              /> */}
+//                <Route 
+//                 exact path='/Dashboard'  
+//                 component={Dashboard} 
+//               /> 
+//                 <Route 
+//                 exact path='/Form' 
+//                 render={(props) => <Form {...props} id = {this.state.id}
+//                 unit_num = {this.state.unit_num}
+//                 ticket_title = {this.state.ticket_title}
+//                 ticket_body = {this.state.ticket_body}
+//                  untiupdateUser={this.updateUser} />}
+//               />
               <SecretRoute
                 isAuthenticated={this.state.loggedIn}
                 exact path="/Dashboard"

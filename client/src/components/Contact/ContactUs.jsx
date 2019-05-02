@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Card from './AboutUsUI';
+import Card from './ContactUsUI';
 import img4 from '../img/img4.jpg';
 import img5 from '../img/img5.jpg';
 import img6 from '../img/image6.png';
 import img7 from '../img/img7.jpg';
 
 
-class AboutUs extends Component {
+class ContactUs extends Component {
     render() {
         return (
 
@@ -46,4 +46,4 @@ class AboutUs extends Component {
     }
 }
 
-export default AboutUs;
+export default ContactUs;

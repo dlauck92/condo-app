@@ -2,9 +2,17 @@
     width: 100px;
 }
 
-/* body{
-    background-image: url("https://www.appromoters.com/wp-content/uploads/2017/04/background-appromoters-advertisers-1.png");
-} */
+body{
+    /* background-image: url("https://ak5.picdn.net/shutterstock/videos/10633445/thumb/1.jpg"); */
+    background-image: url("https://www.blakesguam.com/wp-content/uploads/2016/08/photodune-6207464-geometric-polygon-abstract-background-l-4.jpg");
+    /* background: no-repeat; */
+    /* height: 100%; */
+    /* margin: 0; */
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: auto;
+}
 
 form {
     width: 450px;
@@ -16,6 +24,7 @@ form {
     padding: 2%;
     background-color: rgb(#13246b);
     /* background: transparent; */
+    background-color: rgb(226, 223, 223);
 }
 
 
@@ -27,7 +36,6 @@ form .con {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     width: 60%;
-
     margin: auto;
 }
 
