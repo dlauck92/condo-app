@@ -34,8 +34,9 @@ class SignUp extends Component {
             password: this.state.password,
             
         }).then(response => {
-            console.log("signeup" + response);
+            console.log("signup" + response);
             if (!response.data.error) {
+                alert("Registration successful!!")
                 console.log('successful signup');
                 this.setState({
                     loggedIn: true,
@@ -43,10 +44,12 @@ class SignUp extends Component {
                 });
             } else {
                 console.log('username already taken');
+                alert("It looks like that username has been taken. Try again.");
             }
         }).catch(error => {
             console.log('sign up error: ');
             console.log(error);
+            alert("It looks like something went wrong with your registration. Please try again.");
         });
     }
     onKeyPress = (e) => {
