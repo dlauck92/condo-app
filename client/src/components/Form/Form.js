@@ -182,7 +182,7 @@ class Form extends React.Component {
                         <h5>End of Records to Display!</h5>
                        
                             <div className="Submit">
-                                <input type="submit" value="Clear List" onClick={(e) => { e.preventDefault(); this.clearList() }}/>
+                                <button className="button" type="button" value="Clear List" onClick={(e) => { e.preventDefault(); this.clearList() }}>Clear List</button>
                             </div>
                     </Col>
                 </Row>

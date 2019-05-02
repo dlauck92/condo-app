@@ -58,3 +58,8 @@ input {
     text-align: center;
     font-weight: bold; 
  }
+ .Buttons{
+    background-color: rgb(70, 60, 82);
+    font-weight: bold;
+    text-align: center;
+ }
