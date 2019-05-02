@@ -1,7 +1,7 @@
 // import React from "react";
 import React, { Component } from "react";
 // import '../About/About.css';
-import AboutCards from "../Contact/ContactUs";
+// import AboutCards from "../Contact/ContactUs";
 import ContactUs from "../Contact/ContactUs";
 
 
