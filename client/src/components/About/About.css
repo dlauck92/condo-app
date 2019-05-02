@@ -52,8 +52,9 @@
 }
 
 .about-chap{
-    margin-top: 2%;
-    margin-bottom: 5%;
+    /* margin-top: 2%;
+    margin-bottom: 5%; */
+    margin: auto;
 }
 
 /* .about-creators{
