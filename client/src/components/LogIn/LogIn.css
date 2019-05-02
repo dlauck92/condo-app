@@ -2,16 +2,16 @@
     width: 100px;
 }
 
-body{
+/* body{
     /* background-image: url("https://ak5.picdn.net/shutterstock/videos/10633445/thumb/1.jpg"); */
-    background-image: url("https://www.blakesguam.com/wp-content/uploads/2016/08/photodune-6207464-geometric-polygon-abstract-background-l-4.jpg");
+    /* background-image: url("https://www.blakesguam.com/wp-content/uploads/2016/08/photodune-6207464-geometric-polygon-abstract-background-l-4.jpg"); */
     /* background: no-repeat; */
     /* height: 100%; */
     /* margin: 0; */
     /* background-position: center; */
-    background-repeat: no-repeat;
-    background-size: auto;
-}
+    /* background-repeat: no-repeat; */
+    /* background-size: auto; */
+/* } */
 
 form {
     width: 450px;
