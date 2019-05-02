@@ -38,6 +38,7 @@ class LogIn extends Component {
             console.log('login response: ');
             console.log(response);
             if (response.status === 200) {
+                alert("Login successful!");
                 //update App.js state
                 this.props.updateUser({
                     loggedIn: true,
@@ -53,6 +54,7 @@ class LogIn extends Component {
           
         }).catch(error => {
             console.log(`login error: ${error}`);
+            alert("Uh oh! Somethin went wrong with your login. Please try again.");
         });
     }
 

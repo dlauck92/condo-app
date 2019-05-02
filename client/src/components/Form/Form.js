@@ -33,6 +33,7 @@ class Form extends React.Component {
                     header: 'All Open Work Orders',
                 }))
             .catch(err => console.log(err,'You do not have permission to view these files. Contact your administrator to change your role.'));
+            alert("You do not have permission to view these files. Contact your administrator to change your role.");
     };
 
     // use for getting Closed worker tickets
